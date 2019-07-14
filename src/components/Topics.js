@@ -10,9 +10,23 @@ class Topics extends Component {
     err: null
   };
   render() {
+    const { topics, isLoading, err } = this.state;
+    if (err) return <ErrorPage err={err} />;
+    if (isLoading) return <Loading text="Loading dinosaurs..." />;
+
     return (
       <>
         <h1>Topics</h1>
+        <ul>
+          {topics.map(({ slug, description }) => {
+            return (
+              <li key={slug}>
+                <h2>{slug}</h2>
+                <p>{description}</p>
+              </li>
+            );
+          })}
+        </ul>
       </>
     );
   }
@@ -21,8 +35,8 @@ class Topics extends Component {
     api
       .getTopics()
       .then(topics => {
-        console.log(topics);
-        this.setState({ topics, isLoading: false });
+        console.log(topics.topics);
+        this.setState({ topics: topics.topics, isLoading: false });
       })
       .catch(err => {
         this.setState({ err });
