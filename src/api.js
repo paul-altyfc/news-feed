@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { async } from 'q';
 
 const BASE_URL = 'https://article-reviews.herokuapp.com';
 
@@ -13,13 +14,31 @@ export const getTopics = async () => {
   return data;
 };
 
-export const getArticles = async () => {
-  const { data } = await axios.get(`${BASE_URL}/articles`);
-  return data;
+//  export const getArticles = async () => {
+//   const { data } = await axios.get(`${BASE_URL}/api/articles`);
+//   return data;
+// };
+
+export const getArticles = async (cursor = 1, retInfo = []) => {
+  const apiUrl = BASE_URL + '/api/articles?p=' + cursor;
+  const articles = await axios
+    .get(apiUrl)
+    .then(response => response)
+    .then(res => {
+      if (res.data.articles.length < 1) {
+        // console.log(retInfo);
+        return retInfo;
+      }
+      console.log(`loading page ${cursor}`);
+      retInfo.push(...res.data.articles);
+      //  console.log(retInfo);
+      return getArticles(cursor + 1, retInfo);
+    });
+  return articles;
 };
 
 export const getUsers = async () => {
-  const { data } = await axios.get(`${BASE_URL}/users`);
+  const { data } = await axios.get(`${BASE_URL}/api/users`);
   return data;
 };
 

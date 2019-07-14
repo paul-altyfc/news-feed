@@ -12,7 +12,7 @@ class Topics extends Component {
   render() {
     const { topics, isLoading, err } = this.state;
     if (err) return <ErrorPage err={err} />;
-    if (isLoading) return <Loading text="Loading dinosaurs..." />;
+    if (isLoading) return <Loading text="Loading topics..." />;
 
     return (
       <>
