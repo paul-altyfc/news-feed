@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as api from '../api';
+import { getArticles } from '../api';
 import Loading from './loading';
 import ErrorPage from './error-page';
 
@@ -24,12 +24,10 @@ class Articles extends Component {
 
   componentDidMount() {
     console.log('articles mount');
-    api.getArticles().then(articles => {
-      console.log(articles, 'articles');
+    getArticles().then(({ articles }) => {
+      this.setState({ articles, isLoading: false });
+      console.log(this.state.articles);
     });
-    //console.log(articles);
-
-    // api.getArticles().then(articles => {
   }
 }
 

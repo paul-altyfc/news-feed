@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <nav>
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/topics">Topics</NavLink>
+      {/* <NavLink to="/topics">Topics</NavLink> */}
       <NavLink to="/articles">Articles</NavLink>
     </nav>
   );

@@ -1,46 +1,42 @@
 import axios from 'axios';
-import { async } from 'q';
 
-const BASE_URL = 'https://article-reviews.herokuapp.com';
+const instance = axios.create({
+  baseURL: 'https://article-reviews.herokuapp.com/api'
+});
 
-export const getEndpoints = async () => {
-  const { data } = await axios.get(`${BASE_URL}/api`);
-  return data;
+export const getArticles = topic => {
+  return instance
+    .get(`/articles`, {
+      params: { topic: topic }
+    })
+    .then(({ data }) => {
+      console.log(data, 'in api');
+      return data;
+    });
 };
 
-export const getTopics = async () => {
-  console.log('in getTopics');
-  const { data } = await axios.get(`${BASE_URL}/api/topics`);
-  return data;
-};
-
-//  export const getArticles = async () => {
-//   const { data } = await axios.get(`${BASE_URL}/api/articles`);
-//   return data;
+// PMD 15/07/19 Recursive code that retrieves all records in a single go
+// export const getArticles = async (cursor = 1, retInfo = []) => {
+//   const apiUrl = BASE_URL + '/api/articles?p=' + cursor;
+//   const articles = await axios
+//     .get(apiUrl)
+//     .then(response => response)
+//     .then(res => {
+//       if (res.data.articles.length < 1) {
+//         return retInfo;
+//       }
+//       console.log(`loading page ${cursor}`);
+//       retInfo.push(...res.data.articles);
+//       //  console.log(retInfo);
+//       return getArticles(cursor + 1, retInfo);
+//     });
+//   return articles;
 // };
 
-export const getArticles = async (cursor = 1, retInfo = []) => {
-  const apiUrl = BASE_URL + '/api/articles?p=' + cursor;
-  const articles = await axios
-    .get(apiUrl)
-    .then(response => response)
-    .then(res => {
-      if (res.data.articles.length < 1) {
-        // console.log(retInfo);
-        return retInfo;
-      }
-      console.log(`loading page ${cursor}`);
-      retInfo.push(...res.data.articles);
-      //  console.log(retInfo);
-      return getArticles(cursor + 1, retInfo);
-    });
-  return articles;
-};
-
-export const getUsers = async () => {
-  const { data } = await axios.get(`${BASE_URL}/api/users`);
-  return data;
-};
+// export const getUsers = () => {
+//   const { data } = instance.get(`/users`);
+//   return data.users;
+// };
 
 // export const postDinosaur = async newDinosaur => {
 //   const { data } = await axios.post(`${BASE_URL}/dinosaurs`, newDinosaur);
