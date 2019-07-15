@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as api from '../api';
 import Articles from './Articles';
 import { Router } from '@reach/router';
 
