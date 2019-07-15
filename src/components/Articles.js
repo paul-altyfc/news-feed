@@ -17,7 +17,25 @@ class Articles extends Component {
 
     return (
       <>
+        {console.log(this.props)}
         <h2>Articles</h2>
+        <ul>
+          {articles.map(article => {
+            return (
+              <li key={article.article_id}>
+                <h3>{article.title}</h3>
+                <h4>Topic: {article.topic}</h4>
+                {this.props.loggedInUser ? (
+                  <button>Great Article!</button>
+                ) : (
+                  <button type="button" disabled>
+                    Great Article!
+                  </button>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </>
     );
   }
