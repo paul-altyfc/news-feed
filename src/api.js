@@ -37,6 +37,17 @@ export const getCommentsByArticleId = article_id => {
   });
 };
 
+export const postComment = (article_id, newComment) => {
+  console.log(newComment, 'in api');
+  console.log(article_id, 'in api');
+  return instance
+    .post(`articles/${article_id}/comments`, newComment)
+    .then(({ data }) => {
+      console.log(data);
+      return data.comment;
+    });
+};
+
 // PMD 15/07/19 Recursive code that retrieves all records in a single go
 // export const getArticles = async (cursor = 1, retInfo = []) => {
 //   const apiUrl = BASE_URL + '/api/articles?p=' + cursor;

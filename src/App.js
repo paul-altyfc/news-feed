@@ -8,7 +8,7 @@ import Articles from './components/Articles';
 import Article from './components/Article';
 
 class App extends Component {
-  state = { loggedInUser: 'jessyjelly' };
+  state = { loggedInUser: 'jessjelly' };
   render() {
     const { loggedInUser } = this.state;
     return (

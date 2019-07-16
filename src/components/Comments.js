@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import { getCommentsByArticleId } from '../api';
-import { Link } from '@reach/router';
+import CommentAdder from './CommentAdder';
 
 class Comments extends Component {
   state = {
@@ -15,10 +15,13 @@ class Comments extends Component {
     const { comments, isLoading, err } = this.state;
     if (err) return <ErrorPage err={err} />;
     if (isLoading) return <Loading text="Loading comments..." />;
-
     return (
       <>
-        <Link to="../">Back</Link>
+        <CommentAdder
+          article_id={this.props.article_id}
+          loggedInUser={this.props.loggedInUser}
+          addComment={this.addComment}
+        />
         <h5>comments</h5>
         <ul>
           {comments.map(comment => {
@@ -33,6 +36,13 @@ class Comments extends Component {
       </>
     );
   }
+
+  addComment = newComment => {
+    console.log(newComment, 'addComment');
+    this.setState(state => {
+      return { comments: [newComment, ...state.comments] };
+    });
+  };
 
   fetchComments = () => {
     getCommentsByArticleId(this.props.article_id).then(({ comments }) => {

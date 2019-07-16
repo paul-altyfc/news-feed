@@ -25,8 +25,16 @@ class Article extends Component {
           {/* {console.log(article)} */}
           <h2>{article.title}</h2>
           <p>{article.body}</p>
-          <p>{article.comment_count} comments</p>
-          <Comments article_id={this.props.article_id} />
+          <p>
+            {article.comment_count}
+            <label> </label>
+            <button onClick={e => this.handleClick}>comments</button>
+          </p>
+
+          <Comments
+            article_id={this.props.article_id}
+            loggedInUser={this.props.loggedInUser}
+          />
         </div>
       </>
     );
