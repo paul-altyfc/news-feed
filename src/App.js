@@ -5,6 +5,7 @@ import Home from './components/Home';
 import ErrorPage from './components/error-page';
 import Nav from './components/nav';
 import Articles from './components/Articles';
+import Article from './components/Article';
 
 class App extends Component {
   state = { loggedInUser: 'jessyjelly' };
@@ -18,6 +19,7 @@ class App extends Component {
             <Home path="/" />
             <Articles loggedInUser={loggedInUser} path="/articles" />
             <Articles loggedInUser={loggedInUser} path="/articles/:topic" />
+            {/* <Article loggedInUser={loggedInUser} path="/article/:article_id" /> */}
             <ErrorPage text="404: Page Not Found" default />
           </Router>
         </div>

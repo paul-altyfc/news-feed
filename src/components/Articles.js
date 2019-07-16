@@ -3,6 +3,7 @@ import { getArticles } from '../api';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import { Link } from '@reach/router';
+import Article from './Article';
 
 class Articles extends Component {
   state = {
@@ -18,13 +19,19 @@ class Articles extends Component {
 
     return (
       <>
-        {console.log(this.props)}
+        {/* {console.log(this.props)} */}
         <h2>Articles</h2>
+        <Link to="../">Back</Link>
         <ul>
           {articles.map(article => {
+            console.log(article);
             return (
               <li key={article.article_id}>
+                {/* <Link to={`${article.articles_id}`}> */}
                 <h3>{article.title}</h3>
+                <Article id={article.article_id} />
+                {/* </Link> */}
+
                 <Link to={`${article.topic}`}>
                   <h4>Topic: {article.topic}</h4>
                 </Link>
@@ -39,6 +46,11 @@ class Articles extends Component {
             );
           })}
         </ul>
+        {/* <Article
+          loggedInUser={this.props.loggedInUser}
+          article_id={this.state.articles.article_id}
+          path="/:article_id"
+        /> */}
       </>
     );
   }
@@ -46,7 +58,6 @@ class Articles extends Component {
   fetchArticles = () => {
     getArticles(this.props.topic).then(({ articles }) => {
       this.setState({ articles, isLoading: false });
-      console.log(this.state.articles);
     });
   };
 
@@ -56,10 +67,7 @@ class Articles extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps.topic, 'prev Topic');
-    console.log(this.props.topic, 'this Topic');
-
-    if (prevProps.topic != this.props.topic) {
+    if (prevProps.topic !== this.props.topic) {
       this.fetchArticles();
     }
   }

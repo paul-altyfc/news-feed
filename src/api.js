@@ -10,7 +10,7 @@ export const getArticles = topic => {
       params: { topic: topic }
     })
     .then(({ data }) => {
-      console.log(data, 'in api');
+      // console.log(data, 'in api');
       return data;
     });
 };

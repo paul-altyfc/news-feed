@@ -8,6 +8,7 @@ const Nav = () => {
       <NavLink to="/">Home</NavLink>
       {/* <NavLink to="/topics">Topics</NavLink> */}
       <NavLink to="/articles">Articles</NavLink>
+      {/* <NavLink to="/articles/:id">Articles By Id</NavLink> */}
     </nav>
   );
 };
