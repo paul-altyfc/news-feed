@@ -1,7 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
-import Home from './components/Home';
 import ErrorPage from './components/error-page';
 import Nav from './components/nav';
 import Articles from './components/Articles';
@@ -13,11 +12,11 @@ class App extends Component {
     const { loggedInUser } = this.state;
     return (
       <>
-        <div className="app">
+        <div className="container">
           <Nav />
           <Router>
-            <Home path="/" />
-            <Articles loggedInUser={loggedInUser} path="/articles" />
+            <Articles loggedInUser={loggedInUser} path="/" />
+            {/* <Articles loggedInUser={loggedInUser} path="/articles" /> */}
             <Articles loggedInUser={loggedInUser} path="/topics/:topic" />
             <Articles loggedInUser={loggedInUser} path="/authors/:author" />
             <Article loggedInUser={loggedInUser} path="/articles/:article_id" />

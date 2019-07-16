@@ -3,6 +3,7 @@ import { getArticles } from '../api';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import { Link } from '@reach/router';
+import styles from './Articles.module.css';
 
 class Articles extends Component {
   state = {
@@ -17,24 +18,24 @@ class Articles extends Component {
     if (isLoading) return <Loading text="Loading articles..." />;
 
     return (
-      <>
+      <div className={styles.container}>
         {/* {console.log(this.props)} */}
         <h2>Articles</h2>
         <Link to="../">Back</Link>
-        <ul>
+        <ul className={styles.list}>
           {articles.map(article => {
             return (
-              <li key={article.article_id}>
+              <li className={styles.listitem} key={article.article_id}>
                 <Link to={`/articles/${article.article_id}`}>
                   <h3>{article.title}</h3>
                 </Link>
 
                 <Link to={`/topics/${article.topic}`}>
-                  <h4>Topic: {article.topic}</h4>
+                  <h5>Topic: {article.topic}</h5>
                 </Link>
 
                 <Link to={`/authors/${article.author}`}>
-                  <h4>Author: {article.author}</h4>
+                  <h5>Author: {article.author}</h5>
                 </Link>
 
                 {this.props.loggedInUser ? (
@@ -53,7 +54,7 @@ class Articles extends Component {
           article_id={this.state.articles.article_id}
           path="/:article_id"
         /> */}
-      </>
+      </div>
     );
   }
 

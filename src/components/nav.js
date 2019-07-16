@@ -5,9 +5,9 @@ import NavLink from './nav-link';
 const Nav = () => {
   return (
     <nav>
-      <NavLink to="/">Home</NavLink>
+      {/* <NavLink to="/">Home</NavLink> */}
       {/* <NavLink to="/topics">Topics</NavLink> */}
-      <NavLink to="/articles">Articles</NavLink>
+      <NavLink to="/">Articles</NavLink>
       {/* <NavLink to="/articles/:id">Articles By Id</NavLink> */}
     </nav>
   );
