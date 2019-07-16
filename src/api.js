@@ -4,10 +4,14 @@ const instance = axios.create({
   baseURL: 'https://article-reviews.herokuapp.com/api'
 });
 
-export const getArticles = topic => {
+export const getArticles = (topic, author) => {
+  console.log(author);
   return instance
     .get(`/articles`, {
-      params: { topic: topic }
+      params: {
+        topic: topic,
+        author: author
+      }
     })
     .then(({ data }) => {
       // console.log(data, 'in api');
