@@ -29,6 +29,22 @@ class Comments extends Component {
               <li key={comment.comment_id}>
                 <h5>{comment.author}</h5>
                 <p>{comment.body}</p>
+                {console.log(this.props.loggedInUser)}
+                {this.props.loggedInUser === comment.author ? (
+                  <p>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                  </p>
+                ) : (
+                  <p>
+                    <button type="button" disabled>
+                      Edit
+                    </button>
+                    <button type="button" disabled>
+                      Delete
+                    </button>
+                  </p>
+                )}
               </li>
             );
           })}
