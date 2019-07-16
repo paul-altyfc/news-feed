@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
 import { getArticleById } from '../api';
-import { Link } from '@reach/router';
+import Comments from './Comments';
+import Loading from './loading';
+import ErrorPage from './error-page';
 
 class Article extends Component {
-  state = { article: '' };
+  state = {
+    article: '',
+    isLoading: true,
+    err: null
+  };
   render() {
-    // console.log(this.state.article, 'in article');
-
-    const { article } = this.state;
+    const { article, isLoading, err } = this.state;
+    if (err) return <ErrorPage err={err} />;
+    if (isLoading) return <Loading text="Loading article..." />;
     return (
       <>
-        <h3>Article</h3>
-        <Link to="../">Back</Link>{' '}
         <div>
+          <p>
+            <strong>{article.topic}</strong>
+            <label> posted by </label>
+            {article.author}
+          </p>
           {/* {console.log(article)} */}
+          <h2>{article.title}</h2>
           <p>{article.body}</p>
+          <p>{article.comment_count} comments</p>
+          <Comments article_id={this.props.article_id} />
         </div>
       </>
     );

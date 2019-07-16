@@ -14,19 +14,9 @@ class Home extends Component {
         <Router>
           <Articles path="/articles" />
         </Router>
-
-        {/* <br />
-        <h1>News Feed</h1>
-        <Link to="/articles">Articles</Link> */}
       </>
     );
   }
-  // componentDidMount() {
-  //   console.log('mounted home');
-  //   api.getEndpoints().then(endpoints => {
-  //     console.log(endpoints);
-  //   });
-  // }
 }
 
 export default Home;
