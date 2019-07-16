@@ -18,8 +18,8 @@ class App extends Component {
           <Router>
             <Home path="/" />
             <Articles loggedInUser={loggedInUser} path="/articles" />
-            <Articles loggedInUser={loggedInUser} path="/articles/:topic" />
-            {/* <Article loggedInUser={loggedInUser} path="/article/:article_id" /> */}
+            <Articles loggedInUser={loggedInUser} path="/topics/:topic" />
+            <Article loggedInUser={loggedInUser} path="/articles/:article_id" />
             <ErrorPage text="404: Page Not Found" default />
           </Router>
         </div>

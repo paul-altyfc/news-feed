@@ -24,15 +24,17 @@ class Articles extends Component {
         <Link to="../">Back</Link>
         <ul>
           {articles.map(article => {
-            console.log(article);
+            {
+              /* console.log(article); */
+            }
             return (
               <li key={article.article_id}>
-                {/* <Link to={`${article.articles_id}`}> */}
-                <h3>{article.title}</h3>
-                <Article id={article.article_id} />
-                {/* </Link> */}
+                <Link to={`/articles/${article.article_id}`}>
+                  <h3>{article.title}</h3>
+                </Link>
+                {/* <Article id={article.article_id} /> */}
 
-                <Link to={`${article.topic}`}>
+                <Link to={`/topics/${article.topic}`}>
                   <h4>Topic: {article.topic}</h4>
                 </Link>
                 {this.props.loggedInUser ? (

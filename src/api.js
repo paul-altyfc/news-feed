@@ -15,6 +15,17 @@ export const getArticles = topic => {
     });
 };
 
+export const getArticleById = article_id => {
+  return instance
+    .get(`/articles/${article_id}`, {
+      //  params: { topic: topic }
+    })
+    .then(({ data }) => {
+      // console.log(data, 'in api');
+      return data;
+    });
+};
+
 // PMD 15/07/19 Recursive code that retrieves all records in a single go
 // export const getArticles = async (cursor = 1, retInfo = []) => {
 //   const apiUrl = BASE_URL + '/api/articles?p=' + cursor;
