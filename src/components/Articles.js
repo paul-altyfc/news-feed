@@ -8,6 +8,7 @@ import Voter from './Voter';
 import Sorter from './Sorter';
 import Orderer from './Orderer';
 import dateFormatter from './dateFormatter';
+import TopicsSelector from './Topics';
 
 class Articles extends Component {
   state = {
@@ -42,7 +43,7 @@ class Articles extends Component {
                 {dateFormatter(article.created_at)}
 
                 <Link to={`/topics/${article.topic}`}>
-                  <p>Topic: {article.topic}</p>
+                  <p>Category: {article.topic}</p>
                 </Link>
 
                 <Link to={`/authors/${article.author}`}>
@@ -60,6 +61,9 @@ class Articles extends Component {
             );
           })}
         </ul>
+        <div className={styles.topics}>
+          <TopicsSelector articles={this.state.articles} />
+        </div>
       </div>
     );
   }

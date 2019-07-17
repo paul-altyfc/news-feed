@@ -2,12 +2,12 @@
   background: #a8e5ee;
   display: grid;
   grid-template-areas:
-    'header control .'
-    'articles articles topics'
-    'articles articles creation'
-    'articles articles about'
-    'articles articles .';
-  grid-template-columns: 40vw 40vw 20vw;
+    'header control . .'
+    'articles articles topics .'
+    'articles articles creation .'
+    'articles articles about .'
+    'articles articles . .';
+  grid-template-columns: 40vw 35vw 15vw 10vw;
   grid-template-rows: 5vh 20vh 20vh 20vh 1fr;
   grid-row-gap: 1vh;
   grid-column-gap: 1vw;
@@ -40,7 +40,6 @@
 }
 .topics {
   grid-area: topics;
-  margin: 1vh;
 }
 
 .creation {
