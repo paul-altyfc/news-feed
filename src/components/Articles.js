@@ -4,6 +4,7 @@ import Loading from './loading';
 import ErrorPage from './error-page';
 import { Link } from '@reach/router';
 import styles from './Articles.module.css';
+import Voter from './Voter';
 
 class Articles extends Component {
   state = {
@@ -37,6 +38,12 @@ class Articles extends Component {
                 <Link to={`/authors/${article.author}`}>
                   <h5>Author: {article.author}</h5>
                 </Link>
+
+                <Voter
+                  type="articles"
+                  id={article.article_id}
+                  votes={article.votes}
+                />
 
                 {this.props.loggedInUser ? (
                   <button>Great Article!</button>

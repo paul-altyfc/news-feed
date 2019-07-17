@@ -3,6 +3,7 @@ import { getArticleById } from '../api';
 import Comments from './Comments';
 import Loading from './loading';
 import ErrorPage from './error-page';
+import Voter from './Voter';
 
 class Article extends Component {
   state = {
@@ -22,12 +23,18 @@ class Article extends Component {
             <strong>{article.topic}</strong>
             <label> posted by </label>
             {article.author}
-            <label> </label>
-            {article.created_at}
+            <label> created at </label>
+            {this.formatDate(article.created_at)}
           </p>
           {/* {console.log(article)} */}
           <h2>{article.title}</h2>
           <p>{article.body}</p>
+          <Voter
+            type="articles"
+            id={article.article_id}
+            votes={article.votes}
+          />
+
           <p>
             {article.comment_count}
             <label> </label>
@@ -44,6 +51,10 @@ class Article extends Component {
       </>
     );
   }
+
+  formatDate = created_at => {
+    return new Date(created_at).toLocaleString();
+  };
 
   handleClick = () => {
     this.setState({ showComments: true });

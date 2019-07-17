@@ -13,11 +13,15 @@ class Voter extends Component {
     return (
       <div>
         <button onClick={() => this.vote(1)} disabled={voteModifier === 1}>
-          +1
+          <span role="img" aria-label="thumbs up" alt="thumbs up">
+            👍
+          </span>
         </button>
         <p>Votes: {this.props.votes + voteModifier}</p>
         <button onClick={() => this.vote(-1)} disabled={voteModifier === -1}>
-          -1
+          <span role="img" aria-label="thumbs down" alt="thumbs up">
+            👎
+          </span>
         </button>
       </div>
     );
