@@ -11,7 +11,6 @@ class App extends Component {
   state = { loggedInUser: 'jessjelly' };
   render() {
     const { loggedInUser } = this.state;
-    console.log(loggedInUser);
     return (
       <>
         {/* <div className={styles.container}> */}

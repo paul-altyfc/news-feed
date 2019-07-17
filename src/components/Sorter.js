@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Sorter.module.css';
 
 const Sorter = ({ setSort }) => {
   return (
-    <select onChange={setSort}>
+    <select className={styles.sortbutton} onChange={setSort}>
       <option value="created_at">Date</option>
       <option value="title">Title</option>
       <option value="topic">Topic</option>

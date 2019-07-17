@@ -27,9 +27,9 @@ class Articles extends Component {
       <div className={styles.articles}>
         <h2 className={styles.header}>Articles</h2>
         <div>
-          <Sorter className={styles.control} setSort={this.setSort} />
+          <label>Sort by:</label>
+          <Sorter setSort={this.setSort} />
           <Orderer setOrder={this.setOrder} />
-          {console.log(this.state.order)}
         </div>
         {/* <Link to="../">Back</Link> */}
         <ul className={styles.list}>
@@ -86,7 +86,6 @@ class Articles extends Component {
   };
 
   componentDidMount() {
-    console.log('articles mount');
     this.fetchArticles();
   }
 

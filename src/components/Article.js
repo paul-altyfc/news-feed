@@ -66,7 +66,6 @@ class Article extends Component {
   };
 
   componentDidMount() {
-    // console.log('article mount');
     this.fetchArticle();
   }
 

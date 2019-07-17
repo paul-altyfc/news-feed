@@ -49,21 +49,3 @@ export const vote = (type, id, increment) => {
     inc_votes: increment
   });
 };
-
-// PMD 15/07/19 Recursive code that retrieves all records in a single go
-// export const getArticles = async (cursor = 1, retInfo = []) => {
-//   const apiUrl = BASE_URL + '/api/articles?p=' + cursor;
-//   const articles = await axios
-//     .get(apiUrl)
-//     .then(response => response)
-//     .then(res => {
-//       if (res.data.articles.length < 1) {
-//         return retInfo;
-//       }
-//       console.log(`loading page ${cursor}`);
-//       retInfo.push(...res.data.articles);
-//       //  console.log(retInfo);
-//       return getArticles(cursor + 1, retInfo);
-//     });
-//   return articles;
-// };

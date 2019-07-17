@@ -6,7 +6,6 @@ class CommentAdder extends Component {
     body: ''
   };
   render() {
-    console.log('in comment adder');
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="body">Add a new comment: </label>

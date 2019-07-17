@@ -54,7 +54,6 @@ class Comments extends Component {
   }
 
   addComment = newComment => {
-    console.log(newComment, 'addComment');
     this.setState(state => {
       return { comments: [newComment, ...state.comments] };
     }).catch(err => {
@@ -87,7 +86,6 @@ class Comments extends Component {
   };
 
   componentDidMount() {
-    // console.log('article mount');
     this.fetchComments();
   }
 }

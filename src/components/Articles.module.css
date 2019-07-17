@@ -36,10 +36,11 @@
 }
 
 .control {
-  justify-content: space-around;
+  grid-area: control;
 }
 .topics {
   grid-area: topics;
+  margin: 1vh;
 }
 
 .creation {
