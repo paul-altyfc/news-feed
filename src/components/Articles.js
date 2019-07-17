@@ -3,7 +3,7 @@ import { getArticles } from '../api';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import { Link } from '@reach/router';
-// import styles from './Articles.module.css';
+import styles from './Articles.module.css';
 import Voter from './Voter';
 import Sorter from './Sorter';
 import Orderer from './Orderer';
@@ -24,18 +24,18 @@ class Articles extends Component {
     if (isLoading) return <Loading text="Loading articles..." />;
 
     return (
-      <div>
-        <h2>Articles</h2>
+      <div className={styles.articles}>
+        <h2 className={styles.header}>Articles</h2>
         <div>
-          <Sorter setSort={this.setSort} />
+          <Sorter className={styles.control} setSort={this.setSort} />
           <Orderer setOrder={this.setOrder} />
           {console.log(this.state.order)}
         </div>
         {/* <Link to="../">Back</Link> */}
-        <ul>
+        <ul className={styles.list}>
           {articles.map(article => {
             return (
-              <li key={article.article_id}>
+              <li className={styles.listitems} key={article.article_id}>
                 <Link to={`/articles/${article.article_id}`}>
                   <h3>{article.title}</h3>
                 </Link>

@@ -1,0 +1,51 @@
+.articles {
+  background: #a8e5ee;
+  display: grid;
+  grid-template-areas:
+    'header control .'
+    'articles articles topics'
+    'articles articles creation'
+    'articles articles about'
+    'articles articles .';
+  grid-template-columns: 40vw 40vw 20vw;
+  grid-template-rows: 5vh 20vh 20vh 20vh 1fr;
+  grid-row-gap: 1vh;
+  grid-column-gap: 1vw;
+}
+
+.header {
+  grid-area: header;
+}
+
+.articles {
+  grid-area: articles;
+}
+
+.list {
+  background: #a8e5ee;
+  grid-area: articles;
+  grid-row-start: 1 span 5;
+  list-style-type: none;
+}
+
+.listitems {
+  border: 1px solid;
+  border-radius: 1rem;
+  background: #fbe2a7;
+  margin: 1vh;
+}
+
+.control {
+  justify-content: space-around;
+}
+.topics {
+  grid-area: topics;
+}
+
+.creation {
+  grid-area: creation;
+}
+
+.about {
+  grid-area: about;
+}
