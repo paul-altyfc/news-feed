@@ -7,6 +7,7 @@ import styles from './Articles.module.css';
 import Voter from './Voter';
 import Sorter from './Sorter';
 import Orderer from './Orderer';
+import DateFormatter from './DateFormatter';
 
 class Articles extends Component {
   state = {
@@ -36,9 +37,12 @@ class Articles extends Component {
           {articles.map(article => {
             return (
               <li className={styles.listitem} key={article.article_id}>
-                <Link to={`/articles/${article.article_id}`}>
-                  <h3>{article.title}</h3>
-                </Link>
+                <p>
+                  <Link to={`/articles/${article.article_id}`}>
+                    <h3>{article.title}</h3>
+                  </Link>
+                  {DateFormatter(article.created_at)}
+                </p>
 
                 <Link to={`/topics/${article.topic}`}>
                   <p>Topic: {article.topic}</p>

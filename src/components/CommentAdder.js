@@ -13,6 +13,7 @@ class CommentAdder extends Component {
         <input
           type="text"
           id="body"
+          required={true}
           onChange={e => this.handleChange(e.target.value, 'body')}
         />
         <button>New Comment</button>

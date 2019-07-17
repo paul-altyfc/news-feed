@@ -4,6 +4,7 @@ import Comments from './Comments';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import Voter from './Voter';
+import DateFormatter from './DateFormatter';
 
 class Article extends Component {
   state = {
@@ -24,7 +25,8 @@ class Article extends Component {
             <label> posted by </label>
             {article.author}
             <label> created at </label>
-            {this.formatDate(article.created_at)}
+            {/* {this.formatDate(article.created_at)} */}
+            {DateFormatter(article.created_at)}
           </p>
           <h2>{article.title}</h2>
           <p>{article.body}</p>
@@ -51,9 +53,9 @@ class Article extends Component {
     );
   }
 
-  formatDate = created_at => {
-    return new Date(created_at).toLocaleString();
-  };
+  // formatDate = created_at => {
+  //   return new Date(created_at).toLocaleString();
+  // };
 
   handleClick = () => {
     this.setState({ showComments: true });
