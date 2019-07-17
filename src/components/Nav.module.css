@@ -1,4 +1,21 @@
 .navbar {
-  grid-area: header;
-  background: greenyellow;
+  background: #94d0d8;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: 'logo links user';
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.links {
+  grid-area: links;
+  margin-top: 1em;
+}
+
+.user {
+  grid-area: user;
+  vertical-align: top;
+  text-align: right;
 }

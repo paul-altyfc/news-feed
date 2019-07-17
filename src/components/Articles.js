@@ -3,11 +3,11 @@ import { getArticles } from '../api';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import { Link } from '@reach/router';
-import styles from './Articles.module.css';
+// import styles from './Articles.module.css';
 import Voter from './Voter';
 import Sorter from './Sorter';
 import Orderer from './Orderer';
-import DateFormatter from './DateFormatter';
+import dateFormatter from './dateFormatter';
 
 class Articles extends Component {
   state = {
@@ -24,8 +24,7 @@ class Articles extends Component {
     if (isLoading) return <Loading text="Loading articles..." />;
 
     return (
-      <div className={styles.container}>
-        {/* {console.log(this.props)} */}
+      <div>
         <h2>Articles</h2>
         <div>
           <Sorter setSort={this.setSort} />
@@ -33,16 +32,14 @@ class Articles extends Component {
           {console.log(this.state.order)}
         </div>
         {/* <Link to="../">Back</Link> */}
-        <ul className={styles.list}>
+        <ul>
           {articles.map(article => {
             return (
-              <li className={styles.listitem} key={article.article_id}>
-                <p>
-                  <Link to={`/articles/${article.article_id}`}>
-                    <h3>{article.title}</h3>
-                  </Link>
-                  {DateFormatter(article.created_at)}
-                </p>
+              <li key={article.article_id}>
+                <Link to={`/articles/${article.article_id}`}>
+                  <h3>{article.title}</h3>
+                </Link>
+                {dateFormatter(article.created_at)}
 
                 <Link to={`/topics/${article.topic}`}>
                   <p>Topic: {article.topic}</p>

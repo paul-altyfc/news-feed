@@ -4,7 +4,7 @@ import Comments from './Comments';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import Voter from './Voter';
-import DateFormatter from './DateFormatter';
+import dateFormatter from './dateFormatter';
 
 class Article extends Component {
   state = {
@@ -26,7 +26,7 @@ class Article extends Component {
             {article.author}
             <label> created at </label>
             {/* {this.formatDate(article.created_at)} */}
-            {DateFormatter(article.created_at)}
+            {dateFormatter(article.created_at)}
           </p>
           <h2>{article.title}</h2>
           <p>{article.body}</p>
@@ -36,11 +36,9 @@ class Article extends Component {
             votes={article.votes}
           />
 
-          <p>
-            {article.comment_count}
-            <label> </label>
-            <button onClick={this.handleClick}>comments</button>
-          </p>
+          {article.comment_count}
+          <label> </label>
+          <button onClick={this.handleClick}>comments</button>
 
           {this.state.showComments === true && (
             <Comments
