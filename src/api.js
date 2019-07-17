@@ -48,6 +48,10 @@ export const postComment = (article_id, newComment) => {
     });
 };
 
+export const deleteCommentById = id => {
+  return instance.delete(`comments/${id}`);
+};
+
 // PMD 15/07/19 Recursive code that retrieves all records in a single go
 // export const getArticles = async (cursor = 1, retInfo = []) => {
 //   const apiUrl = BASE_URL + '/api/articles?p=' + cursor;
@@ -64,18 +68,4 @@ export const postComment = (article_id, newComment) => {
 //       return getArticles(cursor + 1, retInfo);
 //     });
 //   return articles;
-// };
-
-// export const getUsers = () => {
-//   const { data } = instance.get(`/users`);
-//   return data.users;
-// };
-
-// export const postDinosaur = async newDinosaur => {
-//   const { data } = await axios.post(`${BASE_URL}/dinosaurs`, newDinosaur);
-//   return data;
-// };
-
-// export const deleteDinosaurById = id => {
-//   return axios.delete(`${BASE_URL}/dinosaurs/${id}`);
 // };

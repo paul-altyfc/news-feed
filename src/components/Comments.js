@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Loading from './loading';
 import ErrorPage from './error-page';
-import { getCommentsByArticleId } from '../api';
+import { getCommentsByArticleId, deleteCommentById } from '../api';
 import CommentAdder from './CommentAdder';
 
 class Comments extends Component {
@@ -32,7 +32,11 @@ class Comments extends Component {
                 {this.props.loggedInUser === comment.author ? (
                   <p>
                     <button>Edit</button>
-                    <button>Delete</button>
+                    <button
+                      onClick={() => this.deleteComment(comment.comment_id)}
+                    >
+                      Delete
+                    </button>
                   </p>
                 ) : (
                   <p>
@@ -56,24 +60,39 @@ class Comments extends Component {
     console.log(newComment, 'addComment');
     this.setState(state => {
       return { comments: [newComment, ...state.comments] };
+    }).catch(err => {
+      this.setState(err);
     });
   };
 
+  deleteComment = id => {
+    deleteCommentById(id)
+      .then(() => {
+        this.setState(({ comments }) => {
+          return {
+            comments: comments.filter(comment => comment.comment_id !== id)
+          };
+        });
+      })
+      .catch(err => {
+        this.setState(err);
+      });
+  };
+
   fetchComments = () => {
-    getCommentsByArticleId(this.props.article_id).then(({ comments }) => {
-      this.setState({ comments, isLoading: false });
-    });
+    getCommentsByArticleId(this.props.article_id)
+      .then(({ comments }) => {
+        this.setState({ comments, isLoading: false });
+      })
+      .catch(err => {
+        this.setState(err);
+      });
   };
 
   componentDidMount() {
     // console.log('article mount');
     this.fetchComments();
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.topic !== this.props.topic) {
-  //     this.fetchComments();
-  //   }
 }
 
 export default Comments;

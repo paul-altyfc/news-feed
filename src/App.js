@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.module.css';
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
 import ErrorPage from './components/error-page';
@@ -12,9 +12,9 @@ class App extends Component {
     const { loggedInUser } = this.state;
     return (
       <>
-        <div className="container">
+        <div className={styles.container}>
           <Nav />
-          <Router>
+          <Router className={styles.content}>
             <Articles loggedInUser={loggedInUser} path="/" />
             {/* <Articles loggedInUser={loggedInUser} path="/articles" /> */}
             <Articles loggedInUser={loggedInUser} path="/topics/:topic" />
