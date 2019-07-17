@@ -4,13 +4,15 @@ const instance = axios.create({
   baseURL: 'https://article-reviews.herokuapp.com/api'
 });
 
-export const getArticles = (topic, author) => {
-  console.log(author);
+export const getArticles = (topic, author, sort_by, order) => {
   return instance
     .get(`/articles`, {
       params: {
-        topic: topic,
-        author: author
+        topic,
+        author,
+        sort_by,
+        order,
+        limit: 1000
       }
     })
     .then(({ data }) => {
@@ -31,12 +33,9 @@ export const getCommentsByArticleId = article_id => {
 };
 
 export const postComment = (article_id, newComment) => {
-  console.log(newComment, 'in api');
-  console.log(article_id, 'in api');
   return instance
     .post(`articles/${article_id}/comments`, newComment)
     .then(({ data }) => {
-      console.log(data);
       return data.comment;
     });
 };

@@ -5,12 +5,16 @@ import ErrorPage from './error-page';
 import { Link } from '@reach/router';
 import styles from './Articles.module.css';
 import Voter from './Voter';
+import Sorter from './Sorter';
+import Orderer from './Orderer';
 
 class Articles extends Component {
   state = {
     articles: [],
     isLoading: true,
-    err: null
+    err: null,
+    sort: 'created_at',
+    order: 'desc'
   };
 
   render() {
@@ -22,7 +26,12 @@ class Articles extends Component {
       <div className={styles.container}>
         {/* {console.log(this.props)} */}
         <h2>Articles</h2>
-        <Link to="../">Back</Link>
+        <div>
+          <Sorter setSort={this.setSort} />
+          <Orderer setOrder={this.setOrder} />
+          {console.log(this.state.order)}
+        </div>
+        {/* <Link to="../">Back</Link> */}
         <ul className={styles.list}>
           {articles.map(article => {
             return (
@@ -32,26 +41,20 @@ class Articles extends Component {
                 </Link>
 
                 <Link to={`/topics/${article.topic}`}>
-                  <h5>Topic: {article.topic}</h5>
+                  <p>Topic: {article.topic}</p>
                 </Link>
 
                 <Link to={`/authors/${article.author}`}>
-                  <h5>Author: {article.author}</h5>
+                  <p>Author: {article.author}</p>
                 </Link>
+
+                <p>Comments: {article.comment_count}</p>
 
                 <Voter
                   type="articles"
                   id={article.article_id}
                   votes={article.votes}
                 />
-
-                {this.props.loggedInUser ? (
-                  <button>Great Article!</button>
-                ) : (
-                  <button type="button" disabled>
-                    Great Article!
-                  </button>
-                )}
               </li>
             );
           })}
@@ -60,9 +63,23 @@ class Articles extends Component {
     );
   }
 
+  setOrder = e => {
+    const { value } = e.target;
+    this.setState({ order: value });
+  };
+
+  setSort = e => {
+    const { value } = e.target;
+    this.setState({ sort: value });
+  };
+
   fetchArticles = () => {
-    console.log(this.props);
-    getArticles(this.props.topic, this.props.author).then(({ articles }) => {
+    getArticles(
+      this.props.topic,
+      this.props.author,
+      this.state.sort,
+      this.state.order
+    ).then(({ articles }) => {
       this.setState({ articles, isLoading: false });
     });
   };
@@ -72,12 +89,16 @@ class Articles extends Component {
     this.fetchArticles();
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(prevProps.author);
-    console.log(this.props.author);
+  componentDidUpdate(prevProps, prevState) {
+    const hasTopicChanged = prevProps.topic !== this.props.topic;
+    const hasAuthorChanged = prevProps.author !== this.props.author;
+    const hasSortChanged = prevState.sort !== this.state.sort;
+    const hasOrderChanged = prevState.order !== this.state.order;
     if (
-      prevProps.topic !== this.props.topic ||
-      prevProps.author !== this.props.author
+      hasTopicChanged ||
+      hasAuthorChanged ||
+      hasSortChanged ||
+      hasOrderChanged
     ) {
       this.fetchArticles();
     }

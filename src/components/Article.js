@@ -26,7 +26,6 @@ class Article extends Component {
             <label> created at </label>
             {this.formatDate(article.created_at)}
           </p>
-          {/* {console.log(article)} */}
           <h2>{article.title}</h2>
           <p>{article.body}</p>
           <Voter
