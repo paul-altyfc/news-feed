@@ -3,6 +3,7 @@ import Loading from './loading';
 import ErrorPage from './error-page';
 import { getCommentsByArticleId, deleteCommentById } from '../api';
 import CommentAdder from './CommentAdder';
+import Voter from './Voter';
 
 class Comments extends Component {
   state = {
@@ -39,6 +40,11 @@ class Comments extends Component {
                     </button>
                   </p>
                 )}
+                <Voter
+                  type="comments"
+                  id={comment.comment_id}
+                  votes={comment.votes}
+                />
               </li>
             );
           })}

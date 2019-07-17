@@ -45,6 +45,12 @@ export const deleteCommentById = id => {
   return instance.delete(`comments/${id}`);
 };
 
+export const vote = (type, id, increment) => {
+  return instance.patch(`/${type}/${id}`, {
+    inc_votes: increment
+  });
+};
+
 // PMD 15/07/19 Recursive code that retrieves all records in a single go
 // export const getArticles = async (cursor = 1, retInfo = []) => {
 //   const apiUrl = BASE_URL + '/api/articles?p=' + cursor;
