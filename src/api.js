@@ -14,24 +14,17 @@ export const getArticles = (topic, author) => {
       }
     })
     .then(({ data }) => {
-      // console.log(data, 'in api');
       return data;
     });
 };
 
 export const getArticleById = article_id => {
-  return instance
-    .get(`/articles/${article_id}`, {
-      //  params: { topic: topic }
-    })
-    .then(({ data }) => {
-      // console.log(data, 'in api');
-      return data;
-    });
+  return instance.get(`/articles/${article_id}`, {}).then(({ data }) => {
+    return data;
+  });
 };
 
 export const getCommentsByArticleId = article_id => {
-  // console.log(article_id);
   return instance.get(`/articles/${article_id}/comments`).then(({ data }) => {
     return data;
   });

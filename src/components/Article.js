@@ -8,7 +8,8 @@ class Article extends Component {
   state = {
     article: '',
     isLoading: true,
-    err: null
+    err: null,
+    showComments: false
   };
   render() {
     const { article, isLoading, err } = this.state;
@@ -21,6 +22,8 @@ class Article extends Component {
             <strong>{article.topic}</strong>
             <label> posted by </label>
             {article.author}
+            <label> </label>
+            {article.created_at}
           </p>
           {/* {console.log(article)} */}
           <h2>{article.title}</h2>
@@ -28,17 +31,23 @@ class Article extends Component {
           <p>
             {article.comment_count}
             <label> </label>
-            <button onClick={e => this.handleClick}>comments</button>
+            <button onClick={this.handleClick}>comments</button>
           </p>
 
-          <Comments
-            article_id={this.props.article_id}
-            loggedInUser={this.props.loggedInUser}
-          />
+          {this.state.showComments === true && (
+            <Comments
+              article_id={this.props.article_id}
+              loggedInUser={this.props.loggedInUser}
+            />
+          )}
         </div>
       </>
     );
   }
+
+  handleClick = () => {
+    this.setState({ showComments: true });
+  };
 
   fetchArticle = () => {
     getArticleById(this.props.article_id).then(({ article }) => {

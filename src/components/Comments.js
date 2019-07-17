@@ -29,21 +29,12 @@ class Comments extends Component {
               <li key={comment.comment_id}>
                 <h5>{comment.author}</h5>
                 <p>{comment.body}</p>
-                {this.props.loggedInUser === comment.author ? (
+                {this.props.loggedInUser === comment.author && (
                   <p>
-                    <button>Edit</button>
+                    {/* <button>Edit</button> */}
                     <button
                       onClick={() => this.deleteComment(comment.comment_id)}
                     >
-                      Delete
-                    </button>
-                  </p>
-                ) : (
-                  <p>
-                    <button type="button" disabled>
-                      Edit
-                    </button>
-                    <button type="button" disabled>
                       Delete
                     </button>
                   </p>
@@ -61,7 +52,7 @@ class Comments extends Component {
     this.setState(state => {
       return { comments: [newComment, ...state.comments] };
     }).catch(err => {
-      this.setState(err);
+      this.setState({ err });
     });
   };
 
@@ -75,7 +66,7 @@ class Comments extends Component {
         });
       })
       .catch(err => {
-        this.setState(err);
+        this.setState({ err });
       });
   };
 
@@ -85,7 +76,7 @@ class Comments extends Component {
         this.setState({ comments, isLoading: false });
       })
       .catch(err => {
-        this.setState(err);
+        this.setState({ err });
       });
   };
 

@@ -49,11 +49,6 @@ class Articles extends Component {
             );
           })}
         </ul>
-        {/* <Article
-          loggedInUser={this.props.loggedInUser}
-          article_id={this.state.articles.article_id}
-          path="/:article_id"
-        /> */}
       </div>
     );
   }
