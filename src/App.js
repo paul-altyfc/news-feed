@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <>
         {/* <div className={styles.container}> */}
-        <div className="container">
+        <div className="App">
           <Nav loggedInUser={loggedInUser} />
           <Router>
             <Articles loggedInUser={loggedInUser} path="/" />

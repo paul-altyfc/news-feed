@@ -1,7 +1,21 @@
+.App {
+  background: #a8e5ee;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+}
+
+.spinner {
+  height: 10em;
+  width: 10em;
+  margin: 25% auto;
+  border-radius: 50%;
+  border: 1em solid lightgrey;
+  border-top: 1em solid grey;
+  animation: spin 0.5s ease infinite;
 }
 
 @keyframes App-logo-spin {
