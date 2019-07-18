@@ -18,7 +18,7 @@ class Topics extends Component {
     if (isLoading) return <Loading text="Loading topics..." />;
     return (
       <div className={styles.container}>
-        <h3>Categories</h3>
+        <h4>Categories</h4>
         <ul className={styles.topics}>
           {topics.map(topic => {
             return (

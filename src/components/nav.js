@@ -7,9 +7,14 @@ const Nav = props => {
   return (
     <nav className={styles.navbar}>
       <NavLink className={styles.links} to="/">
-        <button>Articles</button>
+        <button class="btn">
+          <i class="fa fa-home" /> Articles
+        </button>
       </NavLink>
-      <p className={styles.user}>Logged in user: {loggedInUser}</p>
+      <p className={styles.user}>
+        Logged in user: {loggedInUser}
+        <button class="btn" i class="fa fa-user" />
+      </p>
     </nav>
   );
 };

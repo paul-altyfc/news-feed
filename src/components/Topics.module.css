@@ -6,10 +6,11 @@
   background: #ddf2d4;
   grid-area: topics;
   border: 1px solid red;
-  padding-top: 20px;
+  border-radius: 1rem;
 }
 
 .topics {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
 }
