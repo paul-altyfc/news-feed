@@ -84,9 +84,13 @@ class Articles extends Component {
       this.props.author,
       this.state.sort,
       this.state.order
-    ).then(({ articles }) => {
-      this.setState({ articles, isLoading: false });
-    });
+    )
+      .then(({ articles }) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err });
+      });
   };
 
   componentDidMount() {

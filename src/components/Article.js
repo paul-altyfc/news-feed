@@ -60,9 +60,13 @@ class Article extends Component {
   };
 
   fetchArticle = () => {
-    getArticleById(this.props.article_id).then(({ article }) => {
-      this.setState({ article, isLoading: false });
-    });
+    getArticleById(this.props.article_id)
+      .then(({ article }) => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err });
+      });
   };
 
   componentDidMount() {
