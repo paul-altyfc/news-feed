@@ -7,7 +7,7 @@ const Nav = props => {
   return (
     <nav className={styles.navbar}>
       <NavLink className={styles.links} to="/">
-        <button class="btn">
+        <button className={styles.btn}>
           <i class="fa fa-home" /> Articles
         </button>
       </NavLink>

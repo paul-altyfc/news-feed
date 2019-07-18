@@ -26,8 +26,8 @@ class Articles extends Component {
 
     return (
       <div className={styles.articles}>
-        <Topic />
         <h2 className={styles.header}>Articles</h2>
+        <Topic />
         <div className={styles.control}>
           <label>Sort by:</label>
           <Sorter setSort={this.setSort} />
@@ -38,7 +38,10 @@ class Articles extends Component {
           {articles.map(article => {
             return (
               <li className={styles.listitems} key={article.article_id}>
-                <Link to={`/articles/${article.article_id}`}>
+                <Link
+                  className={styles.link}
+                  to={`/articles/${article.article_id}`}
+                >
                   <h3>{article.title}</h3>
                 </Link>
                 {dateFormatter(article.created_at)}

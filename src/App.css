@@ -1,5 +1,12 @@
 .App {
   background: #a8e5ee;
+  background: linear-gradient(
+      to right,
+      rgba(42, 145, 52, 0.9),
+      rgba(42, 145, 52, 0.5)
+    ),
+    url(img/banner-2.jpeg) center/cover fixed no-repeat;
+  font-family: 'Kalam', cursive;
 }
 
 .App-logo {

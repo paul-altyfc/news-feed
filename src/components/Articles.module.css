@@ -1,8 +1,8 @@
 .articles {
   display: grid;
   grid-template-areas:
-    'header'
     'control'
+    'header'
     'topics'
     'creation'
     'articles'
@@ -35,29 +35,37 @@
 
 .header {
   grid-area: header;
+  padding-left: 5px;
+  color: whitesmoke;
 }
 
+@media only screen and (min-width: 400px) {
+  .header {
+    grid-area: header;
+    padding-left: 20px;
+    color: whitesmoke;
+  }
+}
 .articles {
   grid-area: articles;
 }
 
 .list {
-  background: #a8e5ee;
   grid-area: articles;
   grid-row-start: 1 span 5;
   list-style-type: none;
+  color: whitesmoke;
 }
 
 .listitems {
-  border: 1px solid;
-  border-radius: 1rem;
-  background: #fbe2a7;
-  margin: 1vh;
+  border-bottom: 2px solid;
+  border-color: whitesmoke;
 }
 
 .control {
   grid-area: control;
-  border: 1px solid yellow;
+  display: flex;
+  color: whitesmoke;
 }
 
 .creation {

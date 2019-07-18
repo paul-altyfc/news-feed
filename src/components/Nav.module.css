@@ -1,11 +1,19 @@
 .navbar {
-  background: #94d0d8;
+  background: #242424 !important;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: auto;
   grid-template-areas: 'logo links user';
-  border-bottom: 0px;
 }
 
+@media only screen and (min-width: 400px) {
+  .navbar {
+    background: #242424 !important;
+    padding: 5px 10px !important;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: 'logo links user';
+  }
+}
 .logo {
   grid-area: logo;
 }
@@ -19,4 +27,23 @@
   grid-area: user;
   vertical-align: top;
   text-align: right;
+  color: #f1fffa;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px important;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  box-sizing: border-box;
+  background: #2a9134;
+  color: #f1fffa;
+  transition: all 1s ease;
+  font-family: 'Kalam', cursive;
+}
+
+.btn:hover {
+  color: #2a9134;
+  background: #191919;
 }
