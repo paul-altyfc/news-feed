@@ -12,8 +12,11 @@ const Nav = props => {
         </button>
       </NavLink>
       <p className={styles.user}>
-        Logged in user: {loggedInUser}
-        <button class="btn" i class="fa fa-user" />
+        Logged in user:
+        <button className={styles.logonbutton}>
+          {loggedInUser}
+          <i class="fa fa-user" />
+        </button>
       </p>
     </nav>
   );
