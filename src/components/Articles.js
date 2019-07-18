@@ -8,7 +8,7 @@ import Voter from './Voter';
 import Sorter from './Sorter';
 import Orderer from './Orderer';
 import dateFormatter from './dateFormatter';
-import TopicsSelector from './Topics';
+import Topic from './Topics';
 
 class Articles extends Component {
   state = {
@@ -26,8 +26,9 @@ class Articles extends Component {
 
     return (
       <div className={styles.articles}>
+        <Topic className={styles.topics} />
         <h2 className={styles.header}>Articles</h2>
-        <div>
+        <div className={styles.control}>
           <label>Sort by:</label>
           <Sorter setSort={this.setSort} />
           <Orderer setOrder={this.setOrder} />
@@ -61,9 +62,6 @@ class Articles extends Component {
             );
           })}
         </ul>
-        <div className={styles.topics}>
-          <TopicsSelector articles={this.state.articles} />
-        </div>
       </div>
     );
   }

@@ -1,15 +1,34 @@
 .articles {
   display: grid;
   grid-template-areas:
-    'header control .'
-    'articles articles topics'
-    'articles articles creation'
-    'articles articles about'
-    'articles articles . ';
-  grid-template-columns: 40vw 35vw 15vw 10vw;
+    'header'
+    'control'
+    'topics'
+    'creation'
+    'articles'
+    'articles'
+    'articles'
+    'about';
+  grid-template-columns: 40% auto;
   grid-template-rows: 5vh 20vh 20vh 20vh 1fr;
   grid-row-gap: 1vh;
   grid-column-gap: 1vw;
+}
+
+@media only screen and (min-width: 500px) {
+  .articles {
+    display: grid;
+    grid-template-areas:
+      'header control .'
+      'articles articles topics'
+      'articles articles creation'
+      'articles articles about'
+      'articles articles . ';
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 5vh 20vh 20vh 20vh 1fr;
+    grid-row-gap: 1vh;
+    grid-column-gap: 1vw;
+  }
 }
 
 .header {
@@ -36,15 +55,21 @@
 
 .control {
   grid-area: control;
+  border: 1px solid red;
 }
 .topics {
   grid-area: topics;
+  border: 1px solid yellow;
+  border-radius: 1rem;
+  background: #ddf2d4;
 }
 
 .creation {
   grid-area: creation;
+  border: 1px solid blue;
 }
 
 .about {
   grid-area: about;
+  border: 1px solid green;
 }

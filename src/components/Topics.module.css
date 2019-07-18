@@ -1,12 +1,3 @@
-.list {
-  border: 1px solid;
-  border-radius: 1rem;
-  display: grid;
-  margin-top: 28px;
-  background: #ddf2d4;
-}
-
 .listitem {
   list-style-type: none;
-  margin: 5px;
 }

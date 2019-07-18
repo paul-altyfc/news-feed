@@ -49,3 +49,9 @@ export const vote = (type, id, increment) => {
     inc_votes: increment
   });
 };
+
+export const getTopics = () => {
+  return instance.get(`/topics`).then(({ data }) => {
+    return data;
+  });
+};
