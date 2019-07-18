@@ -26,7 +26,7 @@ class Articles extends Component {
 
     return (
       <div className={styles.articles}>
-        <Topic className={styles.topics} />
+        <Topic />
         <h2 className={styles.header}>Articles</h2>
         <div className={styles.control}>
           <label>Sort by:</label>

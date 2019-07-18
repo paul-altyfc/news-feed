@@ -7,7 +7,7 @@ const Nav = props => {
   return (
     <nav className={styles.navbar}>
       <NavLink className={styles.links} to="/">
-        Articles
+        <button>Articles</button>
       </NavLink>
       <p className={styles.user}>Logged in user: {loggedInUser}</p>
     </nav>

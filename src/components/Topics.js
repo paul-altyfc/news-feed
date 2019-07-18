@@ -17,9 +17,9 @@ class Topics extends Component {
     if (err) return <ErrorPage err={err} />;
     if (isLoading) return <Loading text="Loading topics..." />;
     return (
-      <>
+      <div className={styles.container}>
+        <h3>Categories</h3>
         <ul className={styles.topics}>
-          <h3>Categories</h3>
           {topics.map(topic => {
             return (
               <li className={styles.listitem} key={topic.slug}>
@@ -30,7 +30,7 @@ class Topics extends Component {
             );
           })}
         </ul>
-      </>
+      </div>
     );
   }
   fetchTopics = () => {

@@ -1,3 +1,15 @@
 .listitem {
   list-style-type: none;
 }
+
+.container {
+  background: #ddf2d4;
+  grid-area: topics;
+  border: 1px solid red;
+  padding-top: 20px;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+}
