@@ -18,13 +18,13 @@ class Topics extends Component {
     if (isLoading) return <Loading text="Loading topics..." />;
     return (
       <div className={styles.container}>
-        <h4>Categories</h4>
+        <h4 className={styles.catheader}>Categories</h4>
         <ul className={styles.topics}>
           {topics.map(topic => {
             return (
               <li className={styles.list} key={topic.slug}>
                 <Link to={`/topics/${topic.slug}`}>
-                  <button className={styles.listitem}>{topic.slug}</button>
+                  <button className={styles.topicbtn}>{topic.slug}</button>
                 </Link>
               </li>
             );

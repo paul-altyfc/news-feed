@@ -2,14 +2,34 @@
   list-style-type: none;
 }
 
-.listitem {
+.catheader {
+  color: #f1fffa;
+  margin-left: 1.5em;
+  margin-bottom: 0;
+  margin-top: 0;
+  position: fixed;
+  font-size: 1.5em;
+}
+
+.topicbtn {
+  margin-top: 1em;
+  margin-right: 0.1em;
+  border-radius: 0.3em;
+  font-size: 1.5em;
+  line-height: 1.5;
+  background: #2a9134;
+  color: #f1fffa;
+  transition: all 1s ease;
   font-family: 'Kalam', cursive;
+}
+
+.topicbtn:hover {
+  color: #2a9134;
+  background: #191919;
 }
 
 .container {
   grid-area: topics;
-  border: 1px solid red;
-  border-radius: 1rem;
 }
 
 .topics {
