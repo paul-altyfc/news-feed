@@ -29,7 +29,7 @@ class Articles extends Component {
         <h2 className={styles.header}>Articles</h2>
         <Topic className={styles.topics} />
         <div className={styles.control}>
-          <label className={styles.label}>Sort by:</label>
+          <h2 className={styles.label}>Sort by:</h2>
           <Sorter setSort={this.setSort} />
           <Orderer setOrder={this.setOrder} />
         </div>

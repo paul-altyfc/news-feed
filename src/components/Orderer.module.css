@@ -1,11 +1,15 @@
 .orderbutton {
-  margin: 2px;
   font-family: 'Kalam', cursive;
   font-size: 1em;
+  position: fixed;
+  margin-left: 7em;
 }
 
 @media only screen and (min-width: 400px) {
   .orderbutton {
     margin: 1em;
+    margin-top: 1em;
+    margin-left: 13em;
+    font-size: 1.1em;
   }
 }

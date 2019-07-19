@@ -56,8 +56,6 @@ class Comments extends Component {
   addComment = newComment => {
     this.setState(state => {
       return { comments: [newComment, ...state.comments] };
-    }).catch(err => {
-      this.setState({ err });
     });
   };
 

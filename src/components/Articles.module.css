@@ -35,14 +35,14 @@
 
 .header {
   grid-area: header;
-  padding-left: 5px;
+  padding-left: 1em;
   color: whitesmoke;
 }
 
 @media only screen and (min-width: 400px) {
   .header {
     grid-area: header;
-    padding-left: 20px;
+    padding-left: 1.8em;
     color: whitesmoke;
   }
 }
@@ -66,11 +66,27 @@
   grid-area: control;
   display: flex;
   color: whitesmoke;
-  position: relative;
+  position: fixed;
+  margin-left: 6em;
+}
+
+@media only screen and (min-width: 400px) {
+  .control {
+    grid-area: control;
+    display: flex;
+    color: whitesmoke;
+    position: fixed;
+    margin-left: 10em;
+  }
 }
 
 .label {
-  margin-top: 1em;
+}
+
+@media only screen and (min-width: 400px) {
+  .label {
+    margin-right: 0.5em;
+  }
 }
 
 .creation {
