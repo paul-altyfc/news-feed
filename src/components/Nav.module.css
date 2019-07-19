@@ -3,6 +3,9 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-areas: 'logo links user';
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 @media only screen and (min-width: 400px) {

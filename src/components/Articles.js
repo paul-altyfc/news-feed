@@ -27,9 +27,9 @@ class Articles extends Component {
     return (
       <div className={styles.articles}>
         <h2 className={styles.header}>Articles</h2>
-        <Topic />
+        <Topic className={styles.topics} />
         <div className={styles.control}>
-          <label>Sort by:</label>
+          <label className={styles.label}>Sort by:</label>
           <Sorter setSort={this.setSort} />
           <Orderer setOrder={this.setOrder} />
         </div>

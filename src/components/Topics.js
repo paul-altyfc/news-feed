@@ -22,9 +22,9 @@ class Topics extends Component {
         <ul className={styles.topics}>
           {topics.map(topic => {
             return (
-              <li className={styles.listitem} key={topic.slug}>
+              <li className={styles.list} key={topic.slug}>
                 <Link to={`/topics/${topic.slug}`}>
-                  <button>{topic.slug}</button>
+                  <button className={styles.listitem}>{topic.slug}</button>
                 </Link>
               </li>
             );

@@ -1,9 +1,12 @@
-.listitem {
+.list {
   list-style-type: none;
 }
 
+.listitem {
+  font-family: 'Kalam', cursive;
+}
+
 .container {
-  background: #ddf2d4;
   grid-area: topics;
   border: 1px solid red;
   border-radius: 1rem;
@@ -13,4 +16,5 @@
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
+  position: fixed;
 }

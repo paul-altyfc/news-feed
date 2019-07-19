@@ -8,14 +8,14 @@ const Nav = props => {
     <nav className={styles.navbar}>
       <NavLink className={styles.links} to="/">
         <button className={styles.btn}>
-          <i class="fa fa-home" /> Articles
+          <i className="fa fa-home" /> Articles
         </button>
       </NavLink>
       <p className={styles.user}>
         Logged in user:
         <button className={styles.logonbutton}>
           {loggedInUser}
-          <i class="fa fa-user" />
+          <i className="fa fa-user" />
         </button>
       </p>
     </nav>

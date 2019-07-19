@@ -1,7 +1,11 @@
 .sortbutton {
   margin: 2px;
+  font-family: 'Kalam', cursive;
+  font-size: 1em;
 }
 
 @media only screen and (min-width: 400px) {
-  margin: 18px;
+  .sortbutton {
+    margin: 1em;
+  }
 }
