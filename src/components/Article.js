@@ -15,6 +15,7 @@ class Article extends Component {
   };
   render() {
     const { article, isLoading, err } = this.state;
+
     if (err) return <ErrorPage err={err} />;
     if (isLoading) return <Loading text="Loading article..." />;
     return (
@@ -50,10 +51,6 @@ class Article extends Component {
       </>
     );
   }
-
-  // formatDate = created_at => {
-  //   return new Date(created_at).toLocaleString();
-  // };
 
   handleClick = () => {
     this.setState({ showComments: true });

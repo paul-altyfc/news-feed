@@ -1,4 +1,3 @@
-// import styles from './App.module.css';
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
 import ErrorPage from './components/error-page';
@@ -8,9 +7,12 @@ import Article from './components/Article';
 import './App.css';
 
 class App extends Component {
-  state = { loggedInUser: 'jessjelly' };
+  state = {
+    loggedInUser: 'jessjelly'
+  };
   render() {
     const { loggedInUser } = this.state;
+
     return (
       <>
         {/* <div className={styles.container}> */}
@@ -18,7 +20,6 @@ class App extends Component {
           <Nav loggedInUser={loggedInUser} />
           <Router>
             <Articles loggedInUser={loggedInUser} path="/" />
-            {/* <Articles loggedInUser={loggedInUser} path="/articles" /> */}
             <Articles loggedInUser={loggedInUser} path="/topics/:topic" />
             <Articles loggedInUser={loggedInUser} path="/authors/:author" />
             <Article loggedInUser={loggedInUser} path="/articles/:article_id" />
