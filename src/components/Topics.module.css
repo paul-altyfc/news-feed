@@ -4,25 +4,41 @@
 
 .catheader {
   color: #f1fffa;
-  margin-left: 1.5em;
+  margin-left: 1em;
   margin-bottom: 0;
   margin-top: 0;
   position: fixed;
-  font-size: 1.5em;
+  font-size: 1em;
+  top: 2.5em;
+}
+
+@media only screen and (min-width: 800px) {
+  .catheader {
+    margin-left: 1.25em;
+    font-size: 1.5em;
+    top: 3em;
+  }
 }
 
 .topicbtn {
-  margin-top: 1em;
+  margin-top: 0.1em;
   margin-right: 0.1em;
+  padding: 0.2em;
   border-radius: 0.3em;
-  font-size: 1.5em;
-  line-height: 1.5;
+  font-size: 1em;
+  line-height: 1;
   background: #5588ff;
   color: whitesmoke;
   transition: all 1s ease;
   font-family: 'Lato', sans-serif;
 }
 
+@media only screen and (min-width: 800px) {
+  .topicbtn {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+}
 .topicbtn:hover {
   color: #5588ff;
   background: #191919;
@@ -37,4 +53,13 @@
   flex-wrap: wrap;
   flex-grow: 1;
   position: fixed;
+  top: 1.5em;
+  padding-left: 7.5em;
+}
+
+@media only screen and (min-width: 800px) {
+  .topics {
+    top: 5.5em;
+    padding-left: 2em;
+  }
 }

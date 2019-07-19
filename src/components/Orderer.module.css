@@ -1,15 +1,16 @@
 .orderbutton {
   font-family: 'Lato', sans-serif;
-  font-size: 1em;
+  font-size: 0.8em;
   position: fixed;
-  margin-left: 7em;
+  margin-left: 12.5em;
+  margin-top: 2.2em;
 }
 
 @media only screen and (min-width: 800px) {
   .orderbutton {
     margin: 1em;
-    margin-top: 1em;
-    margin-left: 13em;
-    font-size: 1.1em;
+    top: 2.7em;
+    margin-left: 10.8em;
+    font-size: 1.2em;
   }
 }

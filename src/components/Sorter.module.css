@@ -1,19 +1,28 @@
-.sortbutton {
-  font-family: 'Lato', sans-serif;
+.label {
+  margin-top: 2em;
   font-size: 1em;
-  position: fixed;
-  margin-left: 0;
 }
 
-.droptext {
+@media only screen and (min-width: 800px) {
+  .label {
+    font-size: 1.5em;
+    margin-top: 0.25em;
+  }
+}
+
+.sortbutton {
   font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  position: fixed;
+  margin-top: 1.3em;
+  margin-left: 5em;
+  top: 4em;
 }
 
 @media only screen and (min-width: 800px) {
   .sortbutton {
-    margin: 1em;
-    margin-top: 1em;
-    margin-left: 6em;
-    font-size: 1.1em;
+    top: 2.5em;
+    margin-left: 4.5em;
+    font-size: 1.2em;
   }
 }

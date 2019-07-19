@@ -1,22 +1,22 @@
 .navbar {
   background: #242424 !important;
   display: grid;
-  grid-template-columns: auto;
   grid-template-areas: 'logo links user';
   position: fixed;
   top: 0;
+  height: 2.5em;
   width: 100vw;
 }
 
 @media only screen and (min-width: 800px) {
   .navbar {
     background: #242424 !important;
-    padding: 5px 10px !important;
     display: grid;
-    grid-template-columns: auto;
     grid-template-areas: 'logo links user';
+    height: 4em;
   }
 }
+
 .logo {
   grid-area: logo;
 }
@@ -31,14 +31,22 @@
   vertical-align: top;
   text-align: right;
   color: #f1fffa;
-  padding-right: 2em;
+  padding-right: 0.5em;
+}
+
+@media only screen and (min-width: 800px) {
+  .user {
+    grid-area: user;
+    vertical-align: top;
+    text-align: right;
+    color: #f1fffa;
+    padding-right: 2em;
+  }
 }
 
 .btn {
-  border-radius: 5px;
-  padding: 10px 20px important;
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 1em;
+  line-height: 1;
   box-sizing: border-box;
   background: #3366ff;
   color: #f1fffa;
@@ -46,7 +54,35 @@
   font-family: 'Lato', sans-serif;
 }
 
+@media only screen and (min-width: 800px) {
+  .btn {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}
+
 .btn:hover {
   color: #3366ff;
   background: #191919;
+}
+
+.logonbutton {
+  font-size: 1em;
+  line-height: 1;
+  background: #3366ff;
+  color: #f1fffa;
+  transition: all 1s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+.logonbutton:hover {
+  color: #3366ff;
+  background: #191919;
+}
+
+@media only screen and (min-width: 800px) {
+  .logonbutton {
+    font-size: 1em;
+    line-height: 1.5;
+  }
 }
