@@ -5,6 +5,7 @@ import Loading from './loading';
 import ErrorPage from './error-page';
 import Voter from './Voter';
 import dateFormatter from './dateFormatter';
+import styles from './Article.module.css';
 
 class Article extends Component {
   state = {
@@ -15,12 +16,11 @@ class Article extends Component {
   };
   render() {
     const { article, isLoading, err } = this.state;
-
     if (err) return <ErrorPage err={err} />;
     if (isLoading) return <Loading text="Loading article..." />;
     return (
       <>
-        <div>
+        <div className={styles.article}>
           <p>
             <strong>{article.topic}</strong>
             <label> posted by </label>
@@ -39,7 +39,9 @@ class Article extends Component {
 
           {article.comment_count}
           <label> </label>
-          <button onClick={this.handleClick}>comments</button>
+          <button className={styles.commentbtn} onClick={this.handleClick}>
+            comments
+          </button>
 
           {this.state.showComments === true && (
             <Comments

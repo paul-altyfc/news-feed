@@ -9,6 +9,7 @@
     'articles'
     'articles'
     'about';
+  grid-template-columns: 1fr;
   grid-row-gap: 1vh;
   grid-column-gap: 1vw;
   margin-top: 2.5em;
@@ -18,11 +19,11 @@
   .articles {
     display: grid;
     grid-template-areas:
-      'header control .'
-      'articles articles topics'
-      'articles articles creation'
-      'articles articles about'
-      'articles articles . ';
+      'header control'
+      'articles topics'
+      'articles creation'
+      'articles about';
+    grid-template-columns: auto;
     margin-top: 4em;
   }
 }
@@ -57,6 +58,11 @@
 .listitems {
   border-bottom: 2px solid;
   border-color: whitesmoke;
+}
+
+@media only screen and (min-width: 800px) {
+  .listitems {
+  }
 }
 
 .control {
