@@ -17,14 +17,14 @@
   border-radius: 0.3em;
   font-size: 1.5em;
   line-height: 1.5;
-  background: #2a9134;
-  color: #f1fffa;
+  background: #5588ff;
+  color: whitesmoke;
   transition: all 1s ease;
   font-family: 'Lato', sans-serif;
 }
 
 .topicbtn:hover {
-  color: #2a9134;
+  color: #5588ff;
   background: #191919;
 }
 

@@ -31,6 +31,7 @@
   vertical-align: top;
   text-align: right;
   color: #f1fffa;
+  padding-right: 2em;
 }
 
 .btn {
@@ -39,13 +40,13 @@
   font-size: 20px;
   line-height: 1.5;
   box-sizing: border-box;
-  background: #2a9134;
+  background: #3366ff;
   color: #f1fffa;
   transition: all 1s ease;
   font-family: 'Lato', sans-serif;
 }
 
 .btn:hover {
-  color: #2a9134;
+  color: #3366ff;
   background: #191919;
 }
