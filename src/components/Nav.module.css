@@ -8,7 +8,7 @@
   width: 100vw;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 800px) {
   .navbar {
     background: #242424 !important;
     padding: 5px 10px !important;
