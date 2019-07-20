@@ -4,6 +4,7 @@ import ErrorPage from './error-page';
 import { getCommentsByArticleId, deleteCommentById } from '../api';
 import CommentAdder from './CommentAdder';
 import Voter from './Voter';
+import styles from './Comments.module.css';
 
 class Comments extends Component {
   state = {
@@ -23,12 +24,12 @@ class Comments extends Component {
           loggedInUser={this.props.loggedInUser}
           addComment={this.addComment}
         />
-        <h5>comments</h5>
-        <ul>
+        <h4 className={styles.h4}>comments</h4>
+        <ul className={styles.ul}>
           {comments.map(comment => {
             return (
-              <li key={comment.comment_id}>
-                <h5>{comment.author}</h5>
+              <li className={styles.li} key={comment.comment_id}>
+                <h5 className={styles.h5}>{comment.author}</h5>
                 <p>{comment.body}</p>
                 {this.props.loggedInUser === comment.author && (
                   <p>
