@@ -21,7 +21,7 @@ class Article extends Component {
     return (
       <>
         <div className={styles.article}>
-          <p>
+          <p className={styles.p}>
             <strong>{article.topic}</strong>
             <label> posted by </label>
             {article.author}
@@ -29,19 +29,20 @@ class Article extends Component {
             {/* {this.formatDate(article.created_at)} */}
             {dateFormatter(article.created_at)}
           </p>
-          <h2>{article.title}</h2>
-          <p>{article.body}</p>
+          <h2 className={styles.h2}>{article.title}</h2>
+          <p className={styles.p}>{article.body}</p>
           <Voter
             type="articles"
             id={article.article_id}
             votes={article.votes}
           />
 
-          {article.comment_count}
-          <label> </label>
-          <button className={styles.commentbtn} onClick={this.handleClick}>
-            comments
-          </button>
+          <p className={styles.commentarea}>
+            {article.comment_count}
+            <button className={styles.commentbtn} onClick={this.handleClick}>
+              comments
+            </button>
+          </p>
 
           {this.state.showComments === true && (
             <Comments

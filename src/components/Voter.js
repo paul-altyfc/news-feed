@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ErrorPage from './error-page';
 import { vote } from '../api';
+import styles from './Voter.module.css';
 
 class Voter extends Component {
   state = {
@@ -12,13 +13,16 @@ class Voter extends Component {
     if (err) return <ErrorPage err={err} />;
     return (
       <div>
-        <p>
+        <p className={styles.voter}>
           <button onClick={() => this.vote(1)} disabled={voteModifier === 1}>
             <span role="img" aria-label="thumbs up" alt="thumbs up">
               👍
             </span>
           </button>
-          Votes: {this.props.votes + voteModifier}
+          <label className={styles.votes}>
+            Votes:
+            {this.props.votes + voteModifier}
+          </label>
           <button onClick={() => this.vote(-1)} disabled={voteModifier === -1}>
             <span role="img" aria-label="thumbs down" alt="thumbs up">
               👎
