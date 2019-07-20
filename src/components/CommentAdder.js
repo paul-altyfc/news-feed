@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
 import { postComment } from '../api';
 import ErrorPage from './error-page';
+import styles from './CommentAdder.module.css';
 
 class CommentAdder extends Component {
-  state = {
+  static INITIAL_STATE = {
     body: '',
     err: null
   };
+
+  state = CommentAdder.INITIAL_STATE;
+
   render() {
     const { err } = this.state;
     if (err) return <ErrorPage err={err} />;
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="body">Add a new comment: </label>
-        <input
-          type="text"
-          id="body"
-          required={true}
-          onChange={e => this.handleChange(e.target.value, 'body')}
-        />
-        <button>New Comment</button>
+        <span className={styles.form}>
+          <p className={styles.commenttext}>Add a new comment: </p>
+          <input
+            type="text"
+            id="body"
+            className={styles.inputbox}
+            required={true}
+            onChange={e => this.handleChange(e.target.value, 'body')}
+          />
+          <button>New Comment</button>
+        </span>
       </form>
     );
   }
@@ -35,6 +42,9 @@ class CommentAdder extends Component {
     postComment(article_id, { body, username: loggedInUser })
       .then(newlyPostedComment => {
         this.props.addComment(newlyPostedComment);
+        console.log(CommentAdder.INITIAL_STATE);
+        this.setState({ body: '' });
+        console.log(this.state);
       })
       .catch(err => {
         this.setState({ err });
