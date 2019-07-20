@@ -1,14 +1,19 @@
-html {
-  height: 100%;
-}
-
 .main {
-  color: #888;
+  color: white;
   font-family: 'Lato', sans-serif;
-  background: white;
-  margin-top: 100px;
+  margin-top: 2em;
   display: table;
   width: 100%;
   height: 100vh;
   text-align: center;
+}
+
+.textpos {
+  margin-top: 5em;
+}
+
+@media only screen and (min-width: 800px) {
+  .main {
+    margin-top: 4em;
+  }
 }

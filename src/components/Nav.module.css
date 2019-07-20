@@ -49,6 +49,7 @@
   line-height: 1;
   box-sizing: border-box;
   background: #3366ff;
+  border-radius: 3px;
   color: #f1fffa;
   transition: all 1s ease;
   font-family: 'Lato', sans-serif;
