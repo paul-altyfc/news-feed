@@ -5,7 +5,6 @@ import Nav from './components/nav';
 import Articles from './components/Articles';
 import Article from './components/Article';
 import './App.css';
-import styles from './App.module.css';
 
 class App extends Component {
   state = {
@@ -17,7 +16,7 @@ class App extends Component {
     return (
       <>
         {/* <div className={styles.container}> */}
-        <div className={styles.App}>
+        <div>
           <Nav loggedInUser={loggedInUser} />
           <Router>
             <Articles loggedInUser={loggedInUser} path="/" />

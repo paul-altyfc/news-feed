@@ -60,11 +60,6 @@
   border-color: whitesmoke;
 }
 
-@media only screen and (min-width: 800px) {
-  .listitems {
-  }
-}
-
 .control {
   grid-area: control;
   display: flex;
