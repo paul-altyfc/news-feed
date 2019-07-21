@@ -1,0 +1,52 @@
+.article {
+  color: whitesmoke;
+  display: grid;
+  /* grid-template-columns: repeat(1, 1fr); */
+  margin-top: 3em;
+  grid-gap: 10px;
+  padding-left: 1em;
+  text-align: left;
+  font-size: 0.8em;
+  margin-right: 1em;
+}
+
+.p {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.h2 {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.commentbtn {
+  margin-left: 0.25em;
+  width: 6.5em;
+  font-size: 0.8em;
+  border-radius: 0.3;
+}
+
+.commentarea {
+  margin: 0 0;
+}
+
+@media only screen and (min-width: 800px) {
+  .article {
+    margin-top: 5em;
+    margin-left: 5em;
+    margin-right: 5em;
+    font-size: 1.2em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  .p {
+    margin-right: 0em;
+    width: 100%;
+  }
+  .commentbtn {
+    margin-left: 0.25em;
+    width: 6.5em;
+    font-size: 1em;
+  }
+}

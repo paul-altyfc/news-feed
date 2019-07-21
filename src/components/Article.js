@@ -5,7 +5,7 @@ import Loading from './loading';
 import ErrorPage from './error-page';
 import Voter from './Voter';
 import dateFormatter from './dateFormatter';
-import styles from './Article.module.css';
+import styles from '../css/Article.module.css';
 
 class Article extends Component {
   state = {

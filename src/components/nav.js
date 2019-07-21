@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavLink from './nav-link';
-import styles from './Nav.module.css';
+import styles from '../css/Nav.module.css';
 // PMD - Select User code
 // import Users from './Users';
 

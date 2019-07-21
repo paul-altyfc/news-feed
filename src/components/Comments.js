@@ -4,7 +4,7 @@ import ErrorPage from './error-page';
 import { getCommentsByArticleId, deleteCommentById } from '../api';
 import CommentAdder from './CommentAdder';
 import Voter from './Voter';
-import styles from './Comments.module.css';
+import styles from '../css/Comments.module.css';
 
 class Comments extends Component {
   state = {
@@ -30,11 +30,12 @@ class Comments extends Component {
             return (
               <li className={styles.li} key={comment.comment_id}>
                 <h5 className={styles.h5}>{comment.author}</h5>
-                <p>{comment.body}</p>
+                <p className={styles.p}>{comment.body}</p>
                 {this.props.loggedInUser === comment.author && (
                   <p>
                     {/* <button>Edit</button> */}
                     <button
+                      className={styles.deletebtn}
                       onClick={() => this.deleteComment(comment.comment_id)}
                     >
                       Delete

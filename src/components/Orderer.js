@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Orderer.module.css';
+import styles from '../css/Orderer.module.css';
 
 const Orderer = ({ setOrder }) => {
   return (

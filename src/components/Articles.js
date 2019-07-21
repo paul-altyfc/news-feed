@@ -3,7 +3,7 @@ import { getArticles } from '../api';
 import Loading from './loading';
 import ErrorPage from './error-page';
 import { Link } from '@reach/router';
-import styles from './Articles.module.css';
+import styles from '../css/Articles.module.css';
 import Voter from './Voter';
 import Sorter from './Sorter';
 import Orderer from './Orderer';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { postComment } from '../api';
 import ErrorPage from './error-page';
-import styles from './CommentAdder.module.css';
+import styles from '../css/CommentAdder.module.css';
 
 class CommentAdder extends Component {
   static INITIAL_STATE = {
@@ -26,7 +26,7 @@ class CommentAdder extends Component {
             required={true}
             onChange={e => this.handleChange(e.target.value, 'body')}
           />
-          <button>New Comment</button>
+          <button className={styles.commentbtn}>New Comment</button>
         </span>
       </form>
     );

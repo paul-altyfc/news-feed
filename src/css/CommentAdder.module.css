@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+}
+
+.commenttext {
+  text-align: left;
+  width: 5.25em;
+  margin-top: 0em;
+  margin-bottom: 0;
+  font-size: 0.8em;
+  padding-top: 0.3em;
+}
+
+.inputbox {
+  flex-wrap: wrap;
+  width: 10.5em;
+  font-size: 0.8em;
+}
+
+.commentbtn {
+  font-size: 0.7em;
+  padding: 0;
+  width: 6em;
+}
+
+@media only screen and (min-width: 800px) {
+  .inputbox {
+    width: 20em;
+  }
+  .commenttext {
+    width: 10em;
+  }
+}

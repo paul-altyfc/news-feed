@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ErrorPage from './error-page';
 import { vote } from '../api';
-import styles from './Voter.module.css';
+import styles from '../css/Voter.module.css';
 
 class Voter extends Component {
   state = {
