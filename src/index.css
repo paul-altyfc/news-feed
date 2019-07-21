@@ -12,8 +12,8 @@ code {
     monospace;
 }
 
-html {
-  background: linear-gradient(
+/* html {
+ background: linear-gradient(
       to right,
       rgba(113, 128, 114, 0.9),
       rgba(113, 128, 114, 0.5)
@@ -24,4 +24,4 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+} */
