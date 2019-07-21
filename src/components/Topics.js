@@ -9,7 +9,8 @@ class Topics extends Component {
   state = {
     topics: [],
     isLoading: true,
-    err: null
+    err: null,
+    topic: ''
   };
 
   render() {
@@ -22,9 +23,14 @@ class Topics extends Component {
         <ul className={styles.topics}>
           {topics.map(topic => {
             return (
-              <li className={styles.list} key={topic.slug}>
+              <li className={styles.list} key={topic.slug} id={topic.slug}>
                 <Link to={`/topics/${topic.slug}`}>
-                  <button className={styles.topicbtn}>{topic.slug}</button>
+                  <button
+                    onClick={this.handleClick(topic.slug)}
+                    className={styles.topicbtn}
+                  >
+                    {topic.slug}
+                  </button>
                 </Link>
               </li>
             );
@@ -33,6 +39,13 @@ class Topics extends Component {
       </div>
     );
   }
+
+  handleClick = topic => {
+    // console.log(this.props.topic);
+    return () => {
+      this.props.onPress(topic);
+    };
+  };
   fetchTopics = () => {
     getTopics(this.props.slug)
       .then(({ topics }) => {

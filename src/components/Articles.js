@@ -16,7 +16,8 @@ class Articles extends Component {
     isLoading: true,
     err: null,
     sort: 'created_at',
-    order: 'desc'
+    order: 'desc',
+    topic: 'All'
   };
 
   render() {
@@ -26,8 +27,8 @@ class Articles extends Component {
 
     return (
       <div className={styles.articles}>
-        <h2 className={styles.header}>Articles</h2>
-        <Topic className={styles.topics} />
+        <h2 className={styles.header}>Articles - {this.state.topic}</h2>
+        <Topic onPress={this.handleClick} className={styles.topics} />
         <div className={styles.control}>
           <Sorter setSort={this.setSort} />
           <Orderer setOrder={this.setOrder} />
@@ -78,6 +79,10 @@ class Articles extends Component {
     this.setState({ sort: value });
   };
 
+  handleClick = topic => {
+    this.setState({ topic });
+  };
+
   fetchArticles = () => {
     getArticles(
       this.props.topic,
@@ -102,6 +107,7 @@ class Articles extends Component {
     const hasAuthorChanged = prevProps.author !== this.props.author;
     const hasSortChanged = prevState.sort !== this.state.sort;
     const hasOrderChanged = prevState.order !== this.state.order;
+
     if (
       hasTopicChanged ||
       hasAuthorChanged ||
@@ -109,6 +115,8 @@ class Articles extends Component {
       hasOrderChanged
     ) {
       this.fetchArticles();
+
+      if (this.props.topic === undefined) this.setState({ topic: 'All' });
     }
   }
 }
