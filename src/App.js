@@ -5,6 +5,7 @@ import Nav from './components/nav';
 import Articles from './components/Articles';
 import Article from './components/Article';
 import './App.css';
+// import Users from './components/Users';
 
 class App extends Component {
   state = {
@@ -17,7 +18,11 @@ class App extends Component {
       <>
         {/* <div className={styles.container}> */}
         <div>
-          <Nav loggedInUser={loggedInUser} />
+          {/* <Nav loggedInUser={loggedInUser} /> */}
+          <Nav
+            loggedInUser={this.state.loggedInUser}
+            updateGrandparent={this.updateGrandparent.bind(this)}
+          />
           <Router>
             <Articles loggedInUser={loggedInUser} path="/" />
             <Articles loggedInUser={loggedInUser} path="/topics/:topic" />
@@ -28,6 +33,11 @@ class App extends Component {
         </div>
       </>
     );
+  }
+  updateGrandparent(value) {
+    console.log(value);
+    this.setState({ loggedInUser: value });
+    console.log(this.state.loggedInUser);
   }
 }
 

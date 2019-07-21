@@ -1,68 +1,120 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# News Articles
 
-## Available Scripts
+News Articles is a front-end React Application designed to offer the capability to serves up news based on a selection of topics. The application makes API calls to the back-end News database. Users of the application can utilise the following functionality within the application:
 
-In the project directory, you can run:
+- Read articles and view a list of the topics available.
+- Create new articles.
+- Add new comments on articles.
+- Vote on articles and comments.
+- Delete comments that they have previously added
 
-### `npm start`
+### **Front-End React App**
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Github Repo:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+https://github.com/TBC
 
-### `npm test`
+#### Deployed Project:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://TBC.netlify.com/
 
-### `npm run build`
+### **Back-End API Application**
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Github Repo:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+https://github.com/TBC
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Deployed Project:
 
-### `npm run eject`
+For a full list of end-points please go to the following link:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+https://TBC.herokuapp.com/api
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To get this running on your local machine, please do the following:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. [Fork this repo]
+2. Clone the repo in your terminal using the following command:
 
-## Learn More
+```
+git clone https://github.com/<your-username>/TBC
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installing and Running in local development environment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1.Installing Dependencies
 
-### Code Splitting
+Once you have forked and cloned the repo navigate to the root of the project and run the following command to install the dependencies listed in the package.json:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+This installs the following in dependencies:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```json
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "axios": "^0.19.0",
+    "react": "^16.8.6",
+    "lodash": "^4.17.14",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
 
-### Making a Progressive Web App
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+The above are the minimum version numbers.
 
-### Advanced Configuration
+### 2. Starting the React app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Once all the dependencies have been installed, start the React app with the following command:
 
-### Deployment
+```bash
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+The browser should open a window automatically with the application. If it does not, navigate to localhost:3000 in the browser.
 
-### `npm run build` fails to minify
+### 3. Logging in
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The front-end will require a valid username for the application to get past the Auth component. Below is a list of valid usernames that can selected from the dropdown list.
+
+- tickle122
+- grumpy19
+- happyamy2016
+- cooljmessy
+- weegembump
+- jessjelly
+
+## Deployment
+
+This app has been deployed on Netlify. The link is in the introduction to this README file. To deploy your own version, please follow the below instructions
+
+1. To allow netflify to handle redirects, create a **\_redirects** file in the public folder of your repo and populate it with the following line:
+
+```
+/* /index.html 200
+```
+
+2. Sign up to Netlify on https://app.netlify.com/signup
+3. When prompted to do so, select the option to link with your GitHub account.
+4. Once the account has been linked, on the 'Create a new site' page, select the option to continually deploy wuth GitHub.
+5. In the 'Repository access' configuration box, select the TBC repository.
+6. On the build options tab, verify the default settings, then click 'Deploy Site'
+
+## Built With
+
+- [create-react-app](https://github.com/facebook/create-react-app) - React boilerplate
+- [axios](https://www.npmjs.com/package/axios) - promise-based http client
+- [Reach/Router](https://github.com/reach/router) - Routing for React projects
+- [GitHub](https://github.com/) - Version Control
+
+## Authors
+
+- **Paul Dewey** - [TBC](https://github.com/TBC)
+
+## Acknowledgments
+
+- Thank you for the support of all the tutors at Northcoders in Manchester.

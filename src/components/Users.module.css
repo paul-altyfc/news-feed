@@ -1,0 +1,34 @@
+.usersbtn {
+  margin-top: 3em;
+  width: 10em;
+  margin-right: 0.1em;
+  padding: 0.2em;
+  border-radius: 0.3em;
+  font-size: 1em;
+  line-height: 1;
+  background: #3366ff;
+  color: whitesmoke;
+  transition: all 1s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+@media only screen and (min-width: 800px) {
+  .usersbtn {
+    line-height: 1.5;
+  }
+}
+.usersbtn:hover {
+  color: #3366ff;
+  background: #191919;
+}
+
+.container {
+  grid-area: topics;
+}
+
+@media only screen and (min-width: 800px) {
+  .topics {
+    top: 5.5em;
+    padding-left: 2em;
+  }
+}
