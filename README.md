@@ -12,13 +12,15 @@ News Articles is a front-end React Application designed to offer the capability 
 
 #### Github Repo:
 
-https://github.com/TBC
+https://github.com/paul-altyfc/news-feed
 
 #### Deployed Project:
 
-https://TBC.netlify.com/
+https://articles-review.netlify.com
 
 ### **Back-End API Application**
+
+https://github.com/paul-altyfc/be-news
 
 #### Github Repo:
 
@@ -28,7 +30,7 @@ https://github.com/TBC
 
 For a full list of end-points please go to the following link:
 
-https://TBC.herokuapp.com/api
+https://article-reviews.herokuapp.com/api
 
 ## Getting Started
 
