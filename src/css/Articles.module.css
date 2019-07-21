@@ -13,6 +13,17 @@
   grid-row-gap: 1vh;
   grid-column-gap: 1vw;
   margin-top: 2.5em;
+  background: linear-gradient(
+      to right,
+      rgba(113, 128, 114, 0.9),
+      rgba(113, 128, 114, 0.5)
+    ),
+    url(../img/banner-2.jpeg) no-repeat center center fixed;
+  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 @media only screen and (min-width: 800px) {
@@ -65,7 +76,7 @@
   display: flex;
   color: whitesmoke;
   position: fixed;
-  margin-left: 20em;
+  margin-left: 10em;
 }
 
 @media only screen and (min-width: 800px) {
