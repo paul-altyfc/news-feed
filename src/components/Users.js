@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getUsers } from '../api';
-//import styles from '../css/Users.module.css';
+import styles from '../css/Users.module.css';
 import Loading from './Loading';
 import ErrorPage from './Error-page';
 
@@ -14,19 +14,25 @@ class Users extends Component {
 
   render() {
     const { users, selectedUser, isLoading, err } = this.state;
-    console.log(this.props);
     if (err) return <ErrorPage err={err} />;
     if (isLoading) return <Loading text="Loading users..." />;
     return (
-      <select value={selectedUser} onChange={this.handleChange.bind(this)}>
-        {users.map(user => {
-          return (
-            <option key={user.username} value={user.username}>
-              {user.name}
-            </option>
-          );
-        })}
-      </select>
+      <>
+        <label className={styles.label}>User:</label>
+        <select
+          className={styles.usersbtn}
+          value={selectedUser}
+          onChange={this.handleChange.bind(this)}
+        >
+          {users.map(user => {
+            return (
+              <option key={user.username} value={user.username}>
+                {user.name}
+              </option>
+            );
+          })}
+        </select>
+      </>
     );
   }
   fetchUsers = () => {
@@ -40,9 +46,8 @@ class Users extends Component {
   };
 
   handleChange(e) {
-    console.log(e.target.value);
-    console.log(this.props);
     this.props.updateParent(e.target.value);
+    this.setState({ selectedUser: e.target.value });
   }
 
   componentDidMount() {

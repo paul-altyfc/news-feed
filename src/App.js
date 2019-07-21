@@ -19,7 +19,7 @@ class App extends Component {
         <div>
           {/* <Nav loggedInUser={loggedInUser} /> */}
           <Nav
-            loggedInUser={this.state.loggedInUser}
+            loggedInUser={loggedInUser}
             updateGrandparent={this.updateGrandparent.bind(this)}
           />
           <Router>
@@ -34,9 +34,9 @@ class App extends Component {
     );
   }
   updateGrandparent(value) {
-    console.log(value);
-    this.setState({ loggedInUser: value });
-    console.log(this.state.loggedInUser);
+    this.setState(state => {
+      return { loggedInUser: value };
+    });
   }
 }
 

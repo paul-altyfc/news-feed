@@ -1,20 +1,27 @@
 .usersbtn {
-  margin-top: 3em;
-  width: 10em;
-  margin-right: 0.1em;
+  margin-top: 0.2em;
+  width: 8.5em;
   padding: 0.2em;
   border-radius: 0.3em;
-  font-size: 1em;
+  font-size: 0.85em;
   line-height: 1;
   background: #3366ff;
   color: whitesmoke;
   transition: all 1s ease;
-  font-family: 'Lato', sans-serif;
+}
+
+.label {
+  padding-right: 0.25em;
 }
 
 @media only screen and (min-width: 800px) {
   .usersbtn {
     line-height: 1.5;
+    font-size: 1.1em;
+  }
+  .label {
+    font-size: 1.1em;
+    padding-right: 0.5em;
   }
 }
 .usersbtn:hover {

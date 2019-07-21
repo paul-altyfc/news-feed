@@ -8,12 +8,40 @@
   width: 100vw;
 }
 
+.btn {
+  font-size: 0.8em;
+  box-sizing: border-box;
+  background: #3366ff;
+  border-radius: 3px;
+  color: #f1fffa;
+  transition: all 1s ease;
+  margin-top: 0em;
+}
+
+.btn:hover {
+  color: #3366ff;
+  background: #191919;
+}
+
 @media only screen and (min-width: 800px) {
   .navbar {
-    background: #242424 !important;
+    background: #242424;
     display: grid;
     grid-template-areas: 'logo links user';
     height: 4em;
+  }
+  .links {
+    margin-right: 70em;
+    padding-top: 0.8em;
+  }
+  .btn {
+    font-size: 1.1em;
+    box-sizing: border-box;
+    background: #3366ff;
+    border-radius: 3px;
+    color: #f1fffa;
+    transition: all 1s ease;
+    margin-top: 0em;
   }
 }
 
@@ -33,44 +61,14 @@
   text-align: right;
   color: #f1fffa;
   padding-right: 0.5em;
+  font-size: 0.8em;
 }
 
 @media only screen and (min-width: 800px) {
   .user {
     margin-top: 1.1em;
-    grid-area: user;
-    vertical-align: top;
-    text-align: right;
-    color: #f1fffa;
     padding-right: 3em;
   }
-  .links {
-    grid-area: links;
-    margin-top: 1.1em;
-    padding-right: 26em;
-  }
-}
-
-.btn {
-  font-size: 1em;
-  box-sizing: border-box;
-  background: #3366ff;
-  border-radius: 3px;
-  color: #f1fffa;
-  transition: all 1s ease;
-  font-family: 'Lato', sans-serif;
-  line-height: 1;
-}
-
-@media only screen and (min-width: 800px) {
-  .btn {
-    line-height: 1.5em;
-  }
-}
-
-.btn:hover {
-  color: #3366ff;
-  background: #191919;
 }
 
 .logonbutton {

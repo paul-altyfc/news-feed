@@ -115,7 +115,7 @@ This app has been deployed on Netlify. The link is in the introduction to this R
 
 ## Authors
 
-- **Paul Dewey** - [TBC](https://github.com/TBC)
+- **Paul Dewey** - [paul-altyfc](https://github.com/paul-altyfc)
 
 ## Acknowledgments
 
