@@ -84,12 +84,9 @@ class Articles extends Component {
   };
 
   fetchArticles = () => {
-    getArticles(
-      this.props.topic,
-      this.props.author,
-      this.state.sort,
-      this.state.order
-    )
+    const { topic, author } = this.props;
+    const { sort, order } = this.state;
+    getArticles(topic, author, sort, order)
       .then(({ articles }) => {
         this.setState({ articles, isLoading: false });
       })
@@ -103,10 +100,12 @@ class Articles extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const hasTopicChanged = prevProps.topic !== this.props.topic;
-    const hasAuthorChanged = prevProps.author !== this.props.author;
-    const hasSortChanged = prevState.sort !== this.state.sort;
-    const hasOrderChanged = prevState.order !== this.state.order;
+    const { topic, author } = this.props;
+    const { sort, order } = this.state;
+    const hasTopicChanged = prevProps.topic !== topic;
+    const hasAuthorChanged = prevProps.author !== author;
+    const hasSortChanged = prevState.sort !== sort;
+    const hasOrderChanged = prevState.order !== order;
 
     if (
       hasTopicChanged ||
@@ -116,7 +115,7 @@ class Articles extends Component {
     ) {
       this.fetchArticles();
 
-      if (this.props.topic === undefined) this.setState({ topic: 'All' });
+      if (topic === undefined) this.setState({ topic: 'All' });
     }
   }
 }
