@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { getArticleById } from '../api';
 import Comments from './Comments';
-import Loading from './loading';
-import ErrorPage from './error-page';
+import Loading from './Loading';
+import ErrorPage from './Error-page';
 import Voter from './Voter';
-import dateFormatter from './dateFormatter';
+import dateFormatter from '../utils/dateFormatter';
 import styles from '../css/Article.module.css';
 
 class Article extends Component {
@@ -26,7 +26,6 @@ class Article extends Component {
             <label> posted by </label>
             {article.author}
             <label> created at </label>
-            {/* {this.formatDate(article.created_at)} */}
             {dateFormatter(article.created_at)}
           </p>
           <h2 className={styles.h2}>{article.title}</h2>

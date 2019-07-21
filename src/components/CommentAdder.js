@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { postComment } from '../api';
-import ErrorPage from './error-page';
+import ErrorPage from './Error-page';
 import styles from '../css/CommentAdder.module.css';
 
 class CommentAdder extends Component {

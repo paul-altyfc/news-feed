@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ErrorPage from './error-page';
+import ErrorPage from './Error-page';
 import { vote } from '../api';
 import styles from '../css/Voter.module.css';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
-import ErrorPage from './components/error-page';
-import Nav from './components/nav';
+import ErrorPage from './components/Error-page';
+import Nav from './components/Nav';
 import Articles from './components/Articles';
 import Article from './components/Article';
 import './App.css';
@@ -16,7 +16,6 @@ class App extends Component {
 
     return (
       <>
-        {/* <div className={styles.container}> */}
         <div>
           {/* <Nav loggedInUser={loggedInUser} /> */}
           <Nav

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Loading from './loading';
-import ErrorPage from './error-page';
+import Loading from './Loading';
+import ErrorPage from './Error-page';
 import { getCommentsByArticleId, deleteCommentById } from '../api';
 import CommentAdder from './CommentAdder';
 import Voter from './Voter';
@@ -33,7 +33,6 @@ class Comments extends Component {
                 <p className={styles.p}>{comment.body}</p>
                 {this.props.loggedInUser === comment.author && (
                   <p>
-                    {/* <button>Edit</button> */}
                     <button
                       className={styles.deletebtn}
                       onClick={() => this.deleteComment(comment.comment_id)}

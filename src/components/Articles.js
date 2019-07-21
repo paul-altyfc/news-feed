@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { getArticles } from '../api';
-import Loading from './loading';
-import ErrorPage from './error-page';
+import Loading from './Loading';
+import ErrorPage from './Error-page';
 import { Link } from '@reach/router';
 import styles from '../css/Articles.module.css';
 import Voter from './Voter';
 import Sorter from './Sorter';
 import Orderer from './Orderer';
-import dateFormatter from './dateFormatter';
+import dateFormatter from '../utils/dateFormatter';
 import Topic from './Topics';
 
 class Articles extends Component {
@@ -33,7 +33,6 @@ class Articles extends Component {
           <Sorter setSort={this.setSort} />
           <Orderer setOrder={this.setOrder} />
         </div>
-        {/* <Link to="../">Back</Link> */}
         <ul className={styles.list}>
           {articles.map(article => {
             return (

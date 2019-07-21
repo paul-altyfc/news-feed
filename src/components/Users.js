@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { getUsers } from '../api';
 //import styles from '../css/Users.module.css';
-import Loading from './loading';
-import ErrorPage from './error-page';
+import Loading from './Loading';
+import ErrorPage from './Error-page';
 
 class Users extends Component {
   state = {

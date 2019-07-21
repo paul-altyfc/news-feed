@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { getTopics } from '../api';
 import styles from '../css/Topics.module.css';
-import Loading from './loading';
-import ErrorPage from './error-page';
+import Loading from './Loading';
+import ErrorPage from './Error-page';
 import { Link } from '@reach/router';
 
 class Topics extends Component {
