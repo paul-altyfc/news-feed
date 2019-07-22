@@ -18,10 +18,6 @@ export class Nav extends Component {
             loggedInUser={loggedInUser}
             updateParent={this.updateParent.bind(this)}
           />
-          {/* <button className={styles.logonbutton}>
-            {loggedInUser}
-            <i className="fa fa-user" />
-          </button> */}
         </div>
       </nav>
     );

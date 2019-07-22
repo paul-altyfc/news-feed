@@ -16,8 +16,7 @@ class Articles extends Component {
     isLoading: true,
     err: null,
     sort: 'created_at',
-    order: 'desc',
-    topic: 'All'
+    order: 'desc'
   };
 
   render() {
@@ -27,11 +26,13 @@ class Articles extends Component {
 
     return (
       <div className={styles.articles}>
-        <h2 className={styles.header}>Articles - {this.state.topic}</h2>
-        <Topic onPress={this.handleClick} className={styles.topics} />
+        <h2 className={styles.header}>
+          Articles - {this.props.topic === undefined ? 'All' : this.props.topic}
+        </h2>
+        <Topic className={styles.topics} />
         <div className={styles.control}>
-          <Sorter setSort={this.setSort} />
-          <Orderer setOrder={this.setOrder} />
+          <Sorter setSort={this.setValue} />
+          <Orderer setOrder={this.setValue} />
         </div>
         <ul className={styles.list}>
           {articles.map(article => {
@@ -68,19 +69,11 @@ class Articles extends Component {
     );
   }
 
-  setOrder = e => {
-    const { value } = e.target;
-    this.setState({ order: value });
-  };
+  setValue = e => {
+    console.log(e.target);
+    const { name, value } = e.target;
 
-  setSort = e => {
-    const { value } = e.target;
-    this.setState({ sort: value });
-  };
-
-  handleClick = topic => {
-    console.log(topic);
-    this.setState({ topic });
+    this.setState({ [name]: value });
   };
 
   fetchArticles = () => {
@@ -114,8 +107,6 @@ class Articles extends Component {
       hasOrderChanged
     ) {
       this.fetchArticles();
-
-      if (topic === undefined) this.setState({ topic: 'All' });
     }
   }
 }

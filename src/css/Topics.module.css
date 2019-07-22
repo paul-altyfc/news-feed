@@ -35,6 +35,8 @@
 @media only screen and (min-width: 800px) {
   .topicbtn {
     line-height: 1.5;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
 }
 .topicbtn:hover {

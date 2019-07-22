@@ -76,6 +76,9 @@
     position: fixed;
     margin-left: 10em;
   }
+  .list {
+    width: 50rem;
+  }
 }
 
 .creation {

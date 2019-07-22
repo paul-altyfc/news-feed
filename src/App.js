@@ -5,7 +5,6 @@ import Nav from './components/Nav';
 import Articles from './components/Articles';
 import Article from './components/Article';
 import './App.css';
-// import Users from './components/Users';
 
 class App extends Component {
   state = {
@@ -17,7 +16,6 @@ class App extends Component {
     return (
       <>
         <div>
-          {/* <Nav loggedInUser={loggedInUser} /> */}
           <Nav
             loggedInUser={loggedInUser}
             updateGrandparent={this.updateGrandparent.bind(this)}

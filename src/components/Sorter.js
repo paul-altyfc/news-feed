@@ -5,7 +5,7 @@ const Sorter = ({ setSort }) => {
   return (
     <>
       <h2 className={styles.label}>Sort:</h2>
-      <select className={styles.sortbutton} onChange={setSort}>
+      <select name="sort" className={styles.sortbutton} onChange={setSort}>
         <option className={styles.droptext} value="created_at">
           Date
         </option>

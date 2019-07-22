@@ -25,12 +25,7 @@ class Topics extends Component {
             return (
               <li className={styles.list} key={topic.slug} id={topic.slug}>
                 <Link to={`/topics/${topic.slug}`}>
-                  <button
-                    onClick={this.handleClick(topic.slug)}
-                    className={styles.topicbtn}
-                  >
-                    {topic.slug}
-                  </button>
+                  <button className={styles.topicbtn}>{topic.slug}</button>
                 </Link>
               </li>
             );
@@ -40,12 +35,6 @@ class Topics extends Component {
     );
   }
 
-  handleClick = topic => {
-    // console.log(this.props.topic);
-    return () => {
-      this.props.onPress(topic);
-    };
-  };
   fetchTopics = () => {
     getTopics(this.props.slug)
       .then(({ topics }) => {
