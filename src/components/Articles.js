@@ -79,6 +79,7 @@ class Articles extends Component {
   };
 
   handleClick = topic => {
+    console.log(topic);
     this.setState({ topic });
   };
 

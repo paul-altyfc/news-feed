@@ -22,6 +22,7 @@ class CommentAdder extends Component {
           <input
             type="text"
             id="body"
+            value={this.state.body}
             className={styles.inputbox}
             required={true}
             onChange={e => this.handleChange(e.target.value, 'body')}
