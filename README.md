@@ -83,12 +83,12 @@ The browser should open a window automatically with the application. If it does 
 
 The front-end will require a valid username for the application to get past the Auth component. Below is a list of valid usernames that can selected from the dropdown list.
 
-- tickle122
-- grumpy19
-- happyamy2016
-- cooljmessy
-- weegembump
-- jessjelly
+- Tom Tickle
+- Paul Grump
+- Amy Happy
+- Peter Messy
+- Gemma Bump
+- Jess Jelly
 
 ## Deployment
 
