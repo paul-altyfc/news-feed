@@ -18,7 +18,7 @@ class App extends Component {
         <div>
           <Nav
             loggedInUser={loggedInUser}
-            updateGrandparent={this.updateGrandparent.bind(this)}
+            updateNavBar={this.updateNavBar}
           />
           <Router>
             <Articles loggedInUser={loggedInUser} path="/" />
@@ -31,7 +31,7 @@ class App extends Component {
       </>
     );
   }
-  updateGrandparent(value) {
+  updateNavBar = (value) => {
     this.setState(state => {
       return { loggedInUser: value };
     });

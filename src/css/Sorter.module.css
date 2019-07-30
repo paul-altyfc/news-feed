@@ -1,5 +1,6 @@
 .label {
-  margin-top: 2em;
+  margin-top: 0.1em;
+  margin-right: 2em;
   font-size: 1em;
 }
 
@@ -15,7 +16,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 0.8em;
   position: fixed;
-  margin-top: 1.5em;
+  margin-top: 1.6em;
   margin-left: 3.25em;
   top: 4em;
   width: 7em;

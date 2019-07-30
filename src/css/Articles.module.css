@@ -12,7 +12,7 @@
   grid-template-columns: 1fr;
   grid-row-gap: 1vh;
   grid-column-gap: 1vw;
-  margin-top: 2.5em;
+  margin-top: 4.5em;
 }
 
 @media only screen and (min-width: 800px) {
@@ -65,7 +65,7 @@
   display: flex;
   color: whitesmoke;
   position: fixed;
-  margin-left: 10em;
+  margin-left: 1em;
 }
 
 @media only screen and (min-width: 800px) {

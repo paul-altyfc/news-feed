@@ -22,7 +22,7 @@ class Users extends Component {
         <select
           className={styles.usersbtn}
           value={selectedUser}
-          onChange={this.handleChange.bind(this)}
+          onChange={this.handleChange}
         >
           {users.map(user => {
             return (
@@ -45,8 +45,8 @@ class Users extends Component {
       });
   };
 
-  handleChange(e) {
-    this.props.updateParent(e.target.value);
+  handleChange = (e) => {
+    this.props.updateNavBar(e.target.value);
     this.setState({ selectedUser: e.target.value });
   }
 

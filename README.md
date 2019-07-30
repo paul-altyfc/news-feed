@@ -24,7 +24,7 @@ https://github.com/paul-altyfc/be-news
 
 #### Github Repo:
 
-https://github.com/TBC
+https://github.com/paul-altyfc
 
 #### Deployed Project:
 
@@ -36,12 +36,16 @@ https://article-reviews.herokuapp.com/api
 
 To get this running on your local machine, please do the following:
 
-1. [Fork this repo]
-2. Clone the repo in your terminal using the following command:
+1. Create a new directory on your local machine to store the repo
+
+2. cd into the new directory
+
+3. Clone the repo in your terminal using the following command:
 
 ```
-git clone https://github.com/<your-username>/TBC
+git clone https://github.com/paul-altyfc/news-feed.git
 ```
+4. cd news-feed
 
 ## Installing and Running in local development environment
 
@@ -89,22 +93,6 @@ The front-end will require a valid username for the application to get past the 
 - Peter Messy
 - Gemma Bump
 - Jess Jelly
-
-## Deployment
-
-This app has been deployed on Netlify. The link is in the introduction to this README file. To deploy your own version, please follow the below instructions
-
-1. To allow netflify to handle redirects, create a **\_redirects** file in the public folder of your repo and populate it with the following line:
-
-```
-/* /index.html 200
-```
-
-2. Sign up to Netlify on https://app.netlify.com/signup
-3. When prompted to do so, select the option to link with your GitHub account.
-4. Once the account has been linked, on the 'Create a new site' page, select the option to continually deploy wuth GitHub.
-5. In the 'Repository access' configuration box, select the TBC repository.
-6. On the build options tab, verify the default settings, then click 'Deploy Site'
 
 ## Built With
 

@@ -16,15 +16,15 @@ export class Nav extends Component {
         <div className={styles.user}>
           <Users
             loggedInUser={loggedInUser}
-            updateParent={this.updateParent.bind(this)}
+            updateNavBar={this.updateNavBar}
           />
         </div>
       </nav>
     );
   }
 
-  updateParent(value) {
-    this.props.updateGrandparent(value);
+  updateNavBar = (value) => {
+    this.props.updateNavBar(value);
   }
 }
 
