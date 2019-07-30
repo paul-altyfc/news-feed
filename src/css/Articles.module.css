@@ -53,6 +53,7 @@
   grid-row-start: 1 span 5;
   list-style-type: none;
   color: whitesmoke;
+  margin-right: 2em;
 }
 
 .listitems {
