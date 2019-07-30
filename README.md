@@ -20,11 +20,11 @@ https://articles-review.netlify.com
 
 ### **Back-End API Application**
 
-https://github.com/paul-altyfc/be-news
+https://article-reviews.herokuapp.com
 
 #### Github Repo:
 
-https://github.com/paul-altyfc
+https://github.com/paul-altyfc/be-news
 
 #### Deployed Project:
 
@@ -35,6 +35,9 @@ https://article-reviews.herokuapp.com/api
 ## Getting Started
 
 To get this running on your local machine, please do the following:
+
+1. Create a new repository on [GitHub](https://github.com/new)
+    - do NOT initialise it with a .gitignore or README
 
 1. Create a new directory on your local machine to store the repo
 
